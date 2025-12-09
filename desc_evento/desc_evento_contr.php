@@ -18,6 +18,7 @@ $idEvento = $_GET["idEvento"];
 
 
 $result = retrieves_event_desc($conn, $idEvento);
+$post = retrives_posts( $conn,  $idEvento);
 
 }
 

@@ -8,7 +8,7 @@ function retrieves_event_desc(object $conn, string $idEvento)
     INNER JOIN utenti AS u ON e.id_utente = u.id_utente
     WHERE e.id_evento = ? ';
 
- 
+
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $idEvento);
@@ -18,3 +18,23 @@ function retrieves_event_desc(object $conn, string $idEvento)
 
     return $result;
 }
+
+
+function retrives_posts(object $conn, string $idEvento)
+{
+
+    $sql = 'SELECT commento, voto, nickname
+    FROM post AS p
+    JOIN utenti AS u ON p.id_utente = u.id_utente
+    JOIN eventi AS e ON p.id_evento = e.id_evento
+    WHERE e.id_evento = ?';
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $idEvento);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    return $result;
+
+}
+

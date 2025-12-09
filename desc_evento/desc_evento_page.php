@@ -24,6 +24,8 @@ require '../partials/navbar.php';
     <?php display_event_desc($result)?>
     </div>
     
+    <?php display_event_posts( $post) ?>; 
+    
 </body>
 
 <?php

@@ -44,3 +44,37 @@ function display_event_desc(object $result)
 
     
 }
+
+function display_event_posts(object $result){
+
+
+    if ($result->num_rows > 0) {
+        ?>
+
+        
+        <div class="commenti">
+
+        <?php
+        while($row = $result->fetch_assoc()){
+
+            ?>
+            
+            <div class="commento">
+            <p class="nickname"><?php echo $row["nickname"]?></p><br>
+            <p><?php echo $row["commento"]?></p><br>
+            <p><?php echo "Voto ". $row["voto"]?></p>
+            <div>
+
+
+
+            <?php
+        }
+        echo '</div>';
+        
+        
+    } else {
+        echo "Nessun commento ancora inserito";
+    }
+
+    
+}

@@ -92,3 +92,14 @@ ________________________________________________________________________________
 SELECT titolo, città, luogo, data_inizio, ora, provincia, immagine
 FROM eventi 
 WHERE id_utente = ?
+
+
+
+
+--recupera commenti per evento
+
+SELECT commento, voto, nickname
+FROM post AS p
+JOIN utenti AS u ON p.id_utente = u.id_utente
+JOIN eventi AS e ON p.id_evento = e.id_evento
+WHERE e.id_evento = 1;
