@@ -38,3 +38,14 @@ function retrives_posts(object $conn, string $idEvento)
 
 }
 
+function insert_comment(object $conn, string $userId, string $idEvento, string $commento, int $voto)
+{
+
+    $sql = "INSERT INTO post (id_utente,id_evento,commento,voto) VALUES (?,?,?,?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssi", $userId, $idEvento, $commento, $voto);
+    $stmt->execute();
+
+
+}
+

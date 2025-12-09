@@ -103,3 +103,6 @@ FROM post AS p
 JOIN utenti AS u ON p.id_utente = u.id_utente
 JOIN eventi AS e ON p.id_evento = e.id_evento
 WHERE e.id_evento = 1;
+
+
+-- inserisci commento

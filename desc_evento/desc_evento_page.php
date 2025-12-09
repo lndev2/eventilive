@@ -25,11 +25,7 @@ require '../partials/navbar.php';
             <?php display_event_desc($result) ?>
         </div>
 
-        <button onclick="formCommento()">Inserisci Commento</button>
-        <div id="form-commento" class="form-commento">
-
-
-        </div>
+        <?php display_inserisci_commento() ?>
         <?php display_event_posts($post) ?>;
 
     </div>
