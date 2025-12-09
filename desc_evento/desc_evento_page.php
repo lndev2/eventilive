@@ -1,4 +1,4 @@
-<?php 
+<?php
 require "desc_evento_view.php";
 require '../partials/navbar.php';
 
@@ -20,16 +20,19 @@ require '../partials/navbar.php';
 <body>
     <?php renderNavbar($user); ?>
 
-    <div>
-    <?php display_event_desc($result)?>
+    <div class="content">
+        <div>
+            <?php display_event_desc($result) ?>
+        </div>
+
+        <?php display_event_posts($post) ?>;
+
     </div>
-    
-    <?php display_event_posts( $post) ?>; 
-    
+    <?php renderTrailer() ?>
 </body>
 
 <?php
 $conn->close();
 ?>
 
-</html> 
+</html>

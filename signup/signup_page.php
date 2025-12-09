@@ -63,6 +63,8 @@ require_once '../partials/navbar.php';
         </div>
     </div>
 
+
+    <?php renderTrailer() ?>
 </body>
 
 </html>

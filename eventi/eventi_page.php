@@ -3,7 +3,7 @@
 require "eventi_view.php";
 require "../partials/navbar.php"
 
-?>
+    ?>
 
 
 
@@ -20,14 +20,16 @@ require "../partials/navbar.php"
 </head>
 
 <body>
-    
+
     <?php renderNavbar($user); ?>
 
+    <div class="content">
 
-    <div class="grid-container-eventi">
-        <?php display_events($result); ?>
+        <div class="grid-container-eventi">
+            <?php display_events($result); ?>
+        </div>
     </div>
-
+    <?php renderTrailer() ?>
 </body>
 
 <?php
