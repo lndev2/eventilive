@@ -25,14 +25,23 @@ require '../partials/navbar.php';
             <?php display_event_desc($result) ?>
         </div>
 
+        <button onclick="formCommento()">Inserisci Commento</button>
+        <div id="form-commento" class="form-commento">
+
+
+        </div>
         <?php display_event_posts($post) ?>;
 
     </div>
     <?php renderTrailer() ?>
+
+    <script src="commento.js"></script>
 </body>
 
 <?php
 $conn->close();
 ?>
+
+
 
 </html>

@@ -1,3 +1,6 @@
+
+
+
 .grid-container-eventi {
   display: grid; /* Usa il layout a griglia */
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
