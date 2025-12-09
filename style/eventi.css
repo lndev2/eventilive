@@ -1,0 +1,53 @@
+.grid-container-eventi {
+  display: grid; /* Usa il layout a griglia */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  
+  padding: 10px;
+  gap: 10px;
+
+  
+}
+
+.grid-item {
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-rows: 5fr 1fr;
+  
+  aspect-ratio: 1; 
+  border-style: inset;
+}
+
+.img {
+
+  background-size: cover; /* L'immagine copre tutta la div */
+  background-repeat: no-repeat; /* Non ripetere l'immagine */
+  background-position: center; /* Centra l'immagine */
+}
+
+
+.grid-item > div {
+
+  height: 100%; /* Assicura che le div interne si espandano */
+  display: flex; /* Per centrare il contenuto */
+  justify-content: center;
+  align-items: center;
+}
+
+
+.titolo-evento {
+
+  font-size: 0.6vw;
+  display: flex; /* Usa Flexbox per il layout */
+  flex-direction: column; /* Dispone gli elementi in colonna */
+  justify-content: center; /* Allinea verticalmente al centro */
+  align-items: center; /* Allinea orizzontalmente al centro */
+  text-align: center; /* Centra il testo */
+
+}
+
+.grid-item:hover {
+  background-color: rgb(120, 143, 185);
+  transform: scale(1.05);
+  color:antiquewhite
+}
+

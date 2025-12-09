@@ -1,0 +1,20 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.img {
+  background-size: cover; /* L'immagine copre tutta la div */
+  background-repeat: no-repeat; /* Non ripetere l'immagine */
+  background-position: center; /* Centra l'immagine */
+}
+
+.descrizione {
+  text-align: center;
+  align-items: center;
+  
+  border: 2px solid black;  /* Larghezza, stile e colore del bordo */
+  border-radius: 10%;      /* Angoli arrotondati */
+  padding: 10px;            /* Spaziatura interna opzionale */
+  margin: 5%;
+}

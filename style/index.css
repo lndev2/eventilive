@@ -1,0 +1,59 @@
+.h1 {
+  display: flex;
+  justify-content: center; /* Allinea orizzontalmente */
+  align-items: center; /* Allinea verticalmente */
+  padding: 2%;
+  font-size: 3vw;
+  flex: 1;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px;
+}
+
+.grid-item {
+  color: antiquewhite;
+  display: flex;
+  background-color: rgba(13, 71, 220, 0.8);
+  /*border: 1px solid rgba(0, 0, 0, 0.8); */
+  text-decoration: none; /* rimuove sottolineatura dall'intero link */
+
+  font-size: 2vw;
+  justify-content: center; /* Allinea orizzontalmente */
+  align-items: center; /* Allinea verticalmente */
+
+  aspect-ratio: 1; /* Mantiene il rapporto 1:1 per rendere gli elementi quadrati */
+  /*border-radius: ; */
+
+  background-size: cover; /* L'immagine copre tutta la div */
+  background-repeat: no-repeat; /* Non ripetere l'immagine */
+  background-position: center; /* Centra l'immagine */
+  opacity: 0.8;
+}
+
+.grid-item:hover {
+  opacity: 1; /* Rende l'elemento opaco al passaggio del mouse */
+  transform: scale(1.02);
+}
+
+.grid-item.concerti {
+  background-image: url("../Img/categorie/black-and-white-2600809_1280.jpg");
+}
+
+.grid-item.teatro {
+  background-image: url("../Img/categorie/bathrooms-243009_1280.jpg");
+}
+
+.grid-item.ballo {
+  background-image: url("../Img/categorie/ballet-1919321_1920.jpg");
+}
+
+.grid-item.conferenze {
+  background-image: url("../Img/categorie/ChatGPT Image Nov 30, 2025, 04_54_50 PM.png");
+}
+
+.grid-item.gastronomia {
+  background-image: url("../Img/categorie/beach-6224826_1280.jpg");
+}
