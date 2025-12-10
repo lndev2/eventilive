@@ -1,20 +1,23 @@
-function formCommento() {
+function formCommento(idEvento) {
   const parent = document.getElementById("form-commento");
 
   if (parent.firstElementChild) {
+
     while (parent.firstElementChild) {
       parent.removeChild(parent.firstElementChild);
     }
+
   } else {
     let form = document.createElement("form");
     form.id = "cform";
     form.method = "POST";
+    form.action = "insert_comm_contr.php";
 
     //commento
     let textarea = document.createElement("textarea");
     textarea.name = "commento";
     textarea.placeholder = "Scrivi il tuo commento...";
-    textarea.required = true; // Rende il campo obbligatorio
+    textarea.required = true; 
     form.appendChild(textarea);
 
     let br = document.createElement("br");
@@ -36,6 +39,12 @@ function formCommento() {
     button.value = "inviaCommento";
     button.textContent = "Invia";
     form.appendChild(button);
+
+    let evento = document.createElement("input");
+    evento.type = "hidden";
+    evento.name = "idEvento";
+    evento.value = idEvento;
+    form.appendChild(evento);
 
     parent.appendChild(form);
   }

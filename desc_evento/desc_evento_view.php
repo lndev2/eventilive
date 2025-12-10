@@ -79,16 +79,17 @@ function display_event_posts(object $result){
     
 }
 
-function display_inserisci_commento(){
+function display_inserisci_commento(string $idEvento){
 
     if(isset($_SESSION['user'])){
         ?>
 
     
-        <button onclick="formCommento()">Inserisci Commento</button>
+        <button onclick="formCommento(<?php echo $idEvento ?>)">Inserisci Commento</button>
         <div id="form-commento" class="form-commento">
         </div>
 
+        
         <?php
     }else{
         echo "Accedi per commentare!";
