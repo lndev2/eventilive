@@ -1,6 +1,6 @@
 <?php
 
-require_once "../config_session.inc.php";
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -49,10 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } catch (Exception $e) {
         die("Query failed: " . $e->getMessage());
     }
-
-
-
-
 
 
 
