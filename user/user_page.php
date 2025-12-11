@@ -37,7 +37,44 @@ require "user_view.php";
 
         <div id="inserisciEvento" class="tabcontent">
             <p>Inserisci Evento</p>
-            <form></form>
+            <form>
+                <fieldset>
+
+                    <label for="titolo">Titolo</label><br>
+                    <input type="text" name="titolo" required></input><br><br>
+
+
+                    <label for="select">Categoria</label><br>
+                    <select id="select" name="select" required>
+                        <option value="1">Concerti</option>
+                        <option value="2">Teatro</option>
+                        <option value="3">Ballo</option>
+                        <option value="4">Conferenze</option>
+                        <option value="5">Gastronomia</option>
+                    </select><br><br>
+
+                    <label for="città">Città</label><br>
+                    <input type="text" name="città" required></input><br><br>
+
+                    <label for="luogo">Luogo</label><br>
+                    <input type="text" name="Luogo" required></input><br><br>
+
+                    <label for="provincia">Provincia</label><br>
+                    <input type="text" name="provincia" required></input><br><br>
+
+                    <label for="ora">Data</label><br>
+                    <input type="text" name="Luogo" required></input><br><br>
+
+                    <label for="descrizione">Descrizione</label><br>
+                    <textarea type="textarea" name="descrizione" rows="4" cols="50" required></textarea><br><br>
+
+                    <label for="immagine">Carica Immagine:</label>
+                    <input type="file"  name="immagine"><br><br>
+
+                    <button type="submit">Invia</button>
+
+                </fieldset>
+            </form>
         </div>
 
         <div id="visualizzaIscrizioni" class="tabcontent">
