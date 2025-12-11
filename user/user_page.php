@@ -37,15 +37,15 @@ require "user_view.php";
 
         <div id="inserisciEvento" class="tabcontent">
             <p>Inserisci Evento</p>
-            <form>
+            <form action="inser_evento_contr.php" method="POST">
                 <fieldset>
 
                     <label for="titolo">Titolo</label><br>
                     <input type="text" name="titolo" required></input><br><br>
 
 
-                    <label for="select">Categoria</label><br>
-                    <select id="select" name="select" required>
+                    <label for="categoria">Categoria</label><br>
+                    <select name="categoria" required>
                         <option value="1">Concerti</option>
                         <option value="2">Teatro</option>
                         <option value="3">Ballo</option>
@@ -57,19 +57,22 @@ require "user_view.php";
                     <input type="text" name="città" required></input><br><br>
 
                     <label for="luogo">Luogo</label><br>
-                    <input type="text" name="Luogo" required></input><br><br>
+                    <input type="text" name="luogo" required></input><br><br>
 
                     <label for="provincia">Provincia</label><br>
                     <input type="text" name="provincia" required></input><br><br>
 
-                    <label for="ora">Data</label><br>
-                    <input type="text" name="Luogo" required></input><br><br>
+                    <label for="data">Data</label>
+                    <input type="date" name="data"><br><br>
+
+                    <label for="ora">Ora</label><br>
+                    <input type="time" name="ora" required></input><br><br>
 
                     <label for="descrizione">Descrizione</label><br>
                     <textarea type="textarea" name="descrizione" rows="4" cols="50" required></textarea><br><br>
 
                     <label for="immagine">Carica Immagine:</label>
-                    <input type="file"  name="immagine"><br><br>
+                    <input type="file" name="immagine"><br><br>
 
                     <button type="submit">Invia</button>
 
