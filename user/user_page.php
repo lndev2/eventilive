@@ -36,7 +36,8 @@ require "user_view.php";
         </div>
 
         <div id="inserisciEvento" class="tabcontent">
-            <p>Form inserimento evento</p>
+            <p>Inserisci Evento</p>
+            <form></form>
         </div>
 
         <div id="visualizzaIscrizioni" class="tabcontent">
