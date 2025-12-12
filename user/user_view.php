@@ -33,12 +33,22 @@ function display_user_events($events)
                 <td><?php echo $evento['ora'] ?></td>
                 <td><?php echo $evento['provincia'] ?></td>
                 <td>
-                    <form action="del_evento_contr.php" method="POST">
-                        <button type="submit" name="elimina" value="<?php echo $evento['id_evento'] ?>" >Elimina</button>
+                    <form action="del_evento_contr.php" method="POST" onsubmit="return confermaEliminazione()">
+                        <button type="submit" name="elimina" value="<?php echo $evento['id_evento']?> ">Elimina</button>
                     </form>
                 </td>
                 <td>
-                    <button onclick="console.log('ciao')">Modifica</button>
+                    <button onclick="modEventoForm(<?php echo $evento['id_evento'] ?>)">Modifica</button>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td colspan="8">
+                    <div id="<?php echo $evento['id_evento'] ?>" class="modevento">
+                        
+                    </div>
                 </td>
             </tr>
 

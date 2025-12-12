@@ -89,6 +89,7 @@ require "user_view.php";
 
 
         <script src="tab.js"></script>
+        <script src="mod.js"></script>
     </div>
 
     <?php renderTrailer($user) ?>
