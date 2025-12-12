@@ -105,4 +105,6 @@ JOIN eventi AS e ON p.id_evento = e.id_evento
 WHERE e.id_evento = 1;
 
 
--- inserisci commento
+-- elimina evento 
+DELETE FROM eventi 
+WHERE id_evento = ?;

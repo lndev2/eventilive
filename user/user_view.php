@@ -2,37 +2,50 @@
 
 function display_user_events($events)
 {
+    ?>
 
-    echo '<table>
+    <table>
         <thead>
-        <tr>
-        <th>Titolo</th>
-        <th>Città</th>
-        <th>Luogo</th>
-        <th>Data</th>
-        <th>Ora</th>
-        <th>Provincia</th>
-        </tr>
-        </thead>';
-
-
-
-    while ($evento = $events->fetch_assoc()) {
-
-        echo '<tr>';
-        ?>
-
-        <td><a href="../desc_evento/desc_evento_contr.php?idEvento=<?php echo $evento['id_evento'] ?>"><?php echo $evento['titolo'] ?></a></td>
+            <tr>
+                <th>Titolo</th>
+                <th>Città</th>
+                <th>Luogo</th>
+                <th>Data</th>
+                <th>Ora</th>
+                <th>Provincia</th>
+            </tr>
+        </thead>
 
         <?php
-        echo '<td>' . $evento['città'] . '</td>';
-        echo '<td>' . $evento['luogo'] . '</td>';
-        echo '<td>' . $evento['data_inizio'] . '</td>';
-        echo '<td>' . $evento['ora'] . '</td>';
-        echo '<td>' . $evento['provincia'] . '</td>';
-        echo '</tr>';
 
-    }
+        while ($evento = $events->fetch_assoc()) {
+            ?>
 
-    echo '</table>';
+
+
+            <tr>
+                <td><a
+                        href="../desc_evento/desc_evento_contr.php?idEvento=<?php echo $evento['id_evento'] ?>"><?php echo $evento['titolo'] ?></a>
+                </td>
+                <td><?php echo $evento['città'] ?></td>
+                <td><?php echo $evento['luogo'] ?></td>
+                <td><?php echo $evento['data_inizio'] ?></td>
+                <td><?php echo $evento['ora'] ?></td>
+                <td><?php echo $evento['provincia'] ?></td>
+                <td>
+                    <form action="del_evento_contr.php" method="POST">
+                        <button type="submit" name="elimina" value="<?php echo $evento['id_evento'] ?>" >Elimina</button>
+                    </form>
+                </td>
+                <td>
+                    <button onclick="console.log('ciao')">Modifica</button>
+                </td>
+            </tr>
+
+
+            <?php
+
+        }
+
+        echo '</table>';
 }
