@@ -1,4 +1,4 @@
-function modEventoForm(idEvento) {
+function modEventoForm(idEvento,titolo,idCategoria,città,luogo,provincia,data,ora,descrizione) {
   const div = document.getElementById(idEvento);
 
   if (div.firstElementChild) {
@@ -13,13 +13,13 @@ function modEventoForm(idEvento) {
 
     // Form
     const form = document.createElement("form");
-    form.action = "inser_evento_contr.php";
+    form.action = "mod_evento_contr.php";
     form.method = "POST";
 
     const fieldset = document.createElement("fieldset");
 
     // utility per creare label + input
-    function creaInput(labelText, type, name, required = true) {
+    function creaInput(labelText, type, name, required = true, valorePrecedente) {
       const label = document.createElement("label");
       label.htmlFor = name;
       label.textContent = labelText;
@@ -27,6 +27,8 @@ function modEventoForm(idEvento) {
       const input = document.createElement("input");
       input.type = type;
       input.name = name;
+      input.value = valorePrecedente;
+
       if (required) input.required = true;
 
       fieldset.appendChild(label);
@@ -37,7 +39,8 @@ function modEventoForm(idEvento) {
     }
 
     // Titolo
-    creaInput("Titolo", "text", "titolo");
+    creaInput("Titolo", "text", "titolo", true, titolo);
+    console.log(titolo);
 
     // Categoria (select)
     const labelCat = document.createElement("label");
@@ -58,10 +61,17 @@ function modEventoForm(idEvento) {
       ["5", "Gastronomia"],
     ];
 
+    console.log(idCategoria);
+    
     categorie.forEach(([value, text]) => {
       const option = document.createElement("option");
       option.value = value;
       option.textContent = text;
+
+      if(option.value == idCategoria){
+        option.selected = true;
+      }
+
       select.appendChild(option);
     });
 
@@ -70,9 +80,9 @@ function modEventoForm(idEvento) {
     fieldset.appendChild(document.createElement("br"));
 
     // Città - Luogo - Provincia
-    creaInput("Città", "text", "città");
-    creaInput("Luogo", "text", "luogo");
-    creaInput("Provincia", "text", "provincia");
+    creaInput("Città", "text", "città", null, città);
+    creaInput("Luogo", "text", "luogo", null , luogo);
+    creaInput("Provincia", "text", "provincia", null, provincia);
 
     // Data
     const labelData = document.createElement("label");
@@ -83,13 +93,14 @@ function modEventoForm(idEvento) {
     const inputData = document.createElement("input");
     inputData.type = "date";
     inputData.name = "data";
+    inputData.value = data;
     fieldset.appendChild(inputData);
 
     fieldset.appendChild(document.createElement("br"));
     fieldset.appendChild(document.createElement("br"));
 
     // Ora
-    creaInput("Ora", "time", "ora");
+    creaInput("Ora", "time", "ora", null, ora);
 
     // Descrizione
     const labelDesc = document.createElement("label");
@@ -103,6 +114,7 @@ function modEventoForm(idEvento) {
     textarea.rows = 4;
     textarea.cols = 50;
     textarea.required = true;
+    textarea.value = descrizione;
     fieldset.appendChild(textarea);
 
     fieldset.appendChild(document.createElement("br"));
@@ -125,8 +137,15 @@ function modEventoForm(idEvento) {
     // Submit
     const btn = document.createElement("button");
     btn.type = "submit";
+    btn.name = "modifica";
     btn.textContent = "Invia";
     fieldset.appendChild(btn);
+
+    const inputIdEvento = document.createElement("input");
+    inputIdEvento.id = "inputIdEvento";
+    inputIdEvento.type = "hidden";
+    inputIdEvento.value = idEvento;
+    fieldset.appendChild(inputIdEvento);
 
     // Montaggio finale
     form.appendChild(fieldset);
@@ -138,3 +157,6 @@ function modEventoForm(idEvento) {
 function confermaEliminazione() {
     return confirm("Sei sicuro di voler eliminare questo evento?");
 }
+
+
+

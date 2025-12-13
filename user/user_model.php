@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 function get_user_events(mysqli $mysqli, string $id_utente): mixed
 {
-    $query = "SELECT id_evento, titolo, città, luogo, data_inizio, ora, provincia, immagine
-    FROM eventi 
-    WHERE id_utente = ?"; // Placeholder for prepared statement
+    $query = "SELECT id_evento, titolo, nome_categoria , città, luogo, data_inizio, ora, provincia, immagine, e.id_categoria, descrizione
+                FROM eventi AS e
+                JOIN categorie AS c ON e.id_categoria = c.id_categoria
+                WHERE id_utente = ?;"; // Placeholder for prepared statement
     $stmt = $mysqli->prepare($query);
 
     // Bind parameters

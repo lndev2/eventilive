@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($errors) {
 
-            $_SESSION["errori_evento"] = $errors;
+            //$_SESSION["errori_evento"] = $errors;
 
             header("Location: " . $_SERVER['HTTP_REFERER']);
             die();

@@ -38,7 +38,18 @@ function display_user_events($events)
                     </form>
                 </td>
                 <td>
-                    <button onclick="modEventoForm(<?php echo $evento['id_evento'] ?>)">Modifica</button>
+                    <button onclick="modEventoForm(
+                    
+                    <?php echo $evento['id_evento'] ?>,
+                    '<?php echo $evento['titolo'] ?>',
+                    '<?php echo $evento['id_categoria']?>',
+                    '<?php echo $evento['città']?>',
+                    '<?php echo $evento['luogo'] ?>',
+                    '<?php echo $evento['provincia'] ?>',
+                    '<?php echo $evento['data_inizio'] ?>',
+                    '<?php echo $evento['ora'] ?>',
+                    '<?php echo $evento['descrizione'] ?>',
+                    )">Modifica</button>
                 </td>
 
 
