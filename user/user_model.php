@@ -48,3 +48,17 @@ function del_event(object $conn, string $idEvento): void
     $stmt->execute();
 
 }
+
+
+
+function mod_event(object $conn, string $idEvento, string $titolo, string $categoria, string $città, string $luogo, string $provincia, string $data, string $ora, string $descrizione ): void
+{
+
+    $sql = "UPDATE eventi
+SET titolo = ?, id_categoria=?, città = ?, luogo = ?, provincia = ?, data_inizio = ?, ora = ?, descrizione = ?
+WHERE id_evento = ?;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sissssssi", $titolo,$categoria,$città,$luogo,$provincia,$data, $ora, $descrizione, $idEvento);
+    $stmt->execute();
+
+}

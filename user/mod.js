@@ -144,6 +144,7 @@ function modEventoForm(idEvento,titolo,idCategoria,città,luogo,provincia,data,o
     const inputIdEvento = document.createElement("input");
     inputIdEvento.id = "inputIdEvento";
     inputIdEvento.type = "hidden";
+    inputIdEvento.name = "idEvento";
     inputIdEvento.value = idEvento;
     fieldset.appendChild(inputIdEvento);
 
