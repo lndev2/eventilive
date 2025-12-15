@@ -19,15 +19,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $errors = [];
 
+        if (!isset($_SESSION["user"])) {
+
+            $errors["sessione"] = "Sessione non valida!";
+        }
+        
+
         if (empty($commento)) {
 
             $errors["commento_vuoto"] = "Inserisci un commento!";
         }
 
-        if (!isset($_SESSION["user"])) {
-
-            $errors["sessione"] = "Sessione non valida!";
-        }
 
         if ($errors) {
 
@@ -37,8 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
         }
 
+        
         $userId = $_SESSION["user"]["id_utente"];
-
         insert_comment($conn, $userId, $idEvento, $commento, $voto);
 
         header("Location: " . $_SERVER['HTTP_REFERER']);

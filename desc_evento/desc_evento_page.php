@@ -25,7 +25,7 @@ require '../partials/navbar.php';
             <?php display_event_desc($result) ?>
         </div>
 
-        <?php display_inserisci_commento($idEvento) ?>
+        <?php display_inserisci_commento($conn,  $idEvento,  $userId) ?> 
         <?php display_event_posts($post) ?>;
 
     </div>

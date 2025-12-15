@@ -29,6 +29,7 @@ function formCommento(idEvento) {
     voto.type = "number";
     voto.min = 0;
     voto.max = 10;
+    voto.valueAsNumber = 5;
     voto.placeholder = "inserisci voto";
     form.appendChild(voto);
 

@@ -49,3 +49,16 @@ function insert_comment(object $conn, string $userId, string $idEvento, string $
 
 }
 
+function retrives_user_post(object $conn, string $userId, string $idEvento)
+{
+
+    $sql = "SELECT * FROM post 
+            WHERE id_utente = ? AND id_evento = ? ";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ii", $userId, $idEvento);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $post = $result->fetch_assoc();
+
+    return $post;
+}

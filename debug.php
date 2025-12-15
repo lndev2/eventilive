@@ -3,10 +3,10 @@
 //     /opt/lampp/bin/php debug.php
 
 require "connessione.php";
-require "user/user_model.php";
-
-print_r(mod_event($conn,54,'Festa della Rocciata',5,'Cannara','Cannara','PG','2025/09/01','15:00', 'se magna'));
-
+require "desc_evento/desc_evento_model.php";
+require "desc_evento/desc_evento_contr_funzioni.php";
+//print_r(retrives_user_post( $conn,  1,  1));
+print_r(is_post_already_insert( $conn,1,idEvento: 1));
 ?>
 
 
