@@ -1,14 +1,11 @@
-
 // modifica booleano
 function formCommento(idEvento, modifica) {
   const parent = document.getElementById("form-commento");
 
   if (parent.firstElementChild) {
-
     while (parent.firstElementChild) {
       parent.removeChild(parent.firstElementChild);
     }
-
   } else {
     let form = document.createElement("form");
     form.id = "cform";
@@ -19,7 +16,7 @@ function formCommento(idEvento, modifica) {
     let textarea = document.createElement("textarea");
     textarea.name = "commento";
     textarea.placeholder = "Scrivi il tuo commento...";
-    textarea.required = true; 
+    //textarea.required = true;
     form.appendChild(textarea);
 
     let br = document.createElement("br");
@@ -39,15 +36,25 @@ function formCommento(idEvento, modifica) {
     let button = document.createElement("button");
     button.type = "submit";
 
-    if (!modifica){
+    if (!modifica) {
       button.name = "invia";
-    }else{
+      button.textContent = "Invia";
+    } else {
       button.name = "modifica";
+      button.textContent = "Modifica";
     }
-    
+
     button.value = "inviaCommento";
-    button.textContent = "Invia";
     form.appendChild(button);
+
+    if (modifica) {
+      let buttonElimina = document.createElement("button");
+      buttonElimina.type = "submit";
+      buttonElimina.name = "elimina";
+      buttonElimina.textContent = "elimina";
+      buttonElimina.vaue = "elimina";
+      form.appendChild(buttonElimina);
+    }
 
     let evento = document.createElement("input");
     evento.type = "hidden";

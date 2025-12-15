@@ -78,7 +78,9 @@ function display_event_posts(object $result)
 
 }
 
-function display_inserisci_commento(object $conn, string $idEvento, string $userId)
+
+
+function display_inserisci_commento(object $conn, ?string $idEvento, ?string $userId)
 {
 
 
@@ -90,26 +92,28 @@ function display_inserisci_commento(object $conn, string $idEvento, string $user
             ?>
 
 
-            <button onclick="formCommento(<?php echo $idEvento ?>,true)">Modifica Commento</button>
-            <div id="form-commento" class="form-commento">
-            </div>
+                        <button onclick="formCommento(<?php echo $idEvento ?>,true)">Modifica Commento</button>
+                        <div id="form-commento" class="form-commento">
+                        </div>
 
 
-            <?php
-        }else{
+                        <?php
+        } else {
 
-        ?>
-
-
-            <button onclick="formCommento(<?php echo $idEvento ?>)">Inserisci Commento</button>
-            <div id="form-commento" class="form-commento">
-            </div>
+            ?>
 
 
-        <?php 
-        
+                        <button onclick="formCommento(<?php echo $idEvento ?>, false)">Inserisci Commento</button>
+                        <div id="form-commento" class="form-commento">
+                        </div>
+
+
+                        <?php
+
         }
+
     } else {
+
         echo "Accedi per commentare!";
     }
 

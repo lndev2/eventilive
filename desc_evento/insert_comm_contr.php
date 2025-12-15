@@ -51,6 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else if (isset($_POST["modifica"])) {
 
             mod_comment($conn, $userId, $idEvento, $commento, $voto);
+
+        }else if (isset($_POST["elimina"])) {
+
+            del_comment( $conn,  $userId,  $idEvento);
         }
 
         header("Location: " . $_SERVER['HTTP_REFERER']);

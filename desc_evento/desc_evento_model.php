@@ -52,11 +52,19 @@ function mod_comment(object $conn, string $userId, string $idEvento, string $com
 {
     $sql = "UPDATE post SET commento = ? , voto = ? WHERE id_utente = ? AND id_evento = ?;";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("siii",$commento, $voto, $userId, $idEvento);
+    $stmt->bind_param("siii", $commento, $voto, $userId, $idEvento);
     $stmt->execute();
 
 }
 
+function del_comment(object $conn, string $userId, string $idEvento)
+{
+    $sql = "DELETE FROM post WHERE id_utente = ? AND id_evento = ?;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ii", $userId, $idEvento);
+    $stmt->execute();
+
+}
 
 
 function retrives_user_post(object $conn, string $userId, string $idEvento)
