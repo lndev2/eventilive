@@ -155,6 +155,7 @@ function modEventoForm(idEvento,titolo,idCategoria,città,luogo,provincia,data,o
 }
 
 
+
 function confermaEliminazione() {
     return confirm("Sei sicuro di voler eliminare questo evento?");
 }
