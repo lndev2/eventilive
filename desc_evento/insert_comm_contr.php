@@ -4,7 +4,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    
+
     $commento = $_POST["commento"];
     $voto = $_POST["voto"];
     $idEvento = $_POST["idEvento"];
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $errors["sessione"] = "Sessione non valida!";
         }
-        
+
 
         if (empty($commento)) {
 
@@ -39,14 +39,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
         }
 
-        
+
         $userId = $_SESSION["user"]["id_utente"];
-        insert_comment($conn, $userId, $idEvento, $commento, $voto);
+
+        if (isset($_POST["invia"])) {
+
+            insert_comment($conn, $userId, $idEvento, $commento, $voto);
+
+
+
+        } else if (isset($_POST["modifica"])) {
+
+            mod_comment($conn, $userId, $idEvento, $commento, $voto);
+        }
 
         header("Location: " . $_SERVER['HTTP_REFERER']);
         $conn = null;
         $stmt = null;
         die();
+
 
     } catch (Exception $e) {
         die("Query failed: " . $e->getMessage());

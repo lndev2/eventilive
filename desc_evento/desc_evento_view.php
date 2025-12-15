@@ -87,11 +87,15 @@ function display_inserisci_commento(object $conn, string $idEvento, string $user
 
 
         if (is_post_already_insert($conn, $userId, $idEvento)) {
+            ?>
 
 
-            echo 'commento già inserito!';
+            <button onclick="formCommento(<?php echo $idEvento ?>,true)">Modifica Commento</button>
+            <div id="form-commento" class="form-commento">
+            </div>
 
 
+            <?php
         }else{
 
         ?>

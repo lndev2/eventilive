@@ -46,8 +46,18 @@ function insert_comment(object $conn, string $userId, string $idEvento, string $
     $stmt->bind_param("sssi", $userId, $idEvento, $commento, $voto);
     $stmt->execute();
 
+}
+
+function mod_comment(object $conn, string $userId, string $idEvento, string $commento, int $voto)
+{
+    $sql = "UPDATE post SET commento = ? , voto = ? WHERE id_utente = ? AND id_evento = ?;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("siii",$commento, $voto, $userId, $idEvento);
+    $stmt->execute();
 
 }
+
+
 
 function retrives_user_post(object $conn, string $userId, string $idEvento)
 {
