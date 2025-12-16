@@ -10,7 +10,7 @@ function formCommento(idEvento, modifica) {
     let form = document.createElement("form");
     form.id = "cform";
     form.method = "POST";
-    form.action = "insert_comm_contr.php";
+    form.action = "comm_contr.php";
 
     //commento
     let textarea = document.createElement("textarea");

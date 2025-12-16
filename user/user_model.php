@@ -51,14 +51,38 @@ function del_event(object $conn, string $idEvento): void
 
 
 
-function mod_event(object $conn, string $idEvento, string $titolo, string $categoria, string $città, string $luogo, string $provincia, string $data, string $ora, string $descrizione ): void
+function mod_event(object $conn, string $idEvento, string $titolo, string $categoria, string $città, string $luogo, string $provincia, string $data, string $ora, string $descrizione): void
 {
 
     $sql = "UPDATE eventi
 SET titolo = ?, id_categoria=?, città = ?, luogo = ?, provincia = ?, data_inizio = ?, ora = ?, descrizione = ?
 WHERE id_evento = ?;";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sissssssi", $titolo,$categoria,$città,$luogo,$provincia,$data, $ora, $descrizione, $idEvento);
+    $stmt->bind_param("sissssssi", $titolo, $categoria, $città, $luogo, $provincia, $data, $ora, $descrizione, $idEvento);
+    $stmt->execute();
+
+}
+
+
+function subscribe(object $conn, string $idUtente, string $idCategoria)
+{
+
+
+    $sql = "INSERT INTO iscrizioni (id_utente, id_categoria) VALUES (?,?);";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ii", $idUtente, $idCategoria);
+    $stmt->execute();
+
+}
+
+
+function unsubscribe(object $conn, string $idUtente, string $idCategoria)
+{
+
+
+    $sql = "DELETE FROM iscrizioni WHERE id_utente = ? AND id_categoria =  ? ;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ii", $idUtente, $idCategoria);
     $stmt->execute();
 
 }

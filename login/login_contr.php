@@ -53,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["errors_login"] = $errors;
 
 
-
             header("Location: ../signup/signup_page.php");
 
             die();

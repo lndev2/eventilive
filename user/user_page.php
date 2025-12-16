@@ -26,7 +26,7 @@ require "user_view.php";
         <div class="tab">
             <button class="tablinks" onclick="changeTab(event, 'eventiInseriti')">Eventi Inseriti</button>
             <button class="tablinks" onclick="changeTab(event, 'inserisciEvento')">Inserisci Evento</button>
-            <button class="tablinks" onclick="changeTab(event, 'visualizzaIscrizioni')">Visualizza Iscrizioni</button>
+            <button class="tablinks" onclick="changeTab(event, 'visualizzaIscrizioni')">Iscrizioni</button>
         </div>
 
         <!-- Tab content -->
@@ -81,11 +81,26 @@ require "user_view.php";
         </div>
 
         <div id="visualizzaIscrizioni" class="tabcontent">
-            <p>Iscrizioni Effettuate</p>
+
+            <form class="categories-form" action="iscrizioni_contr.php" method="POST">
+
+
+                <input type="checkbox" id="c1" name="categorie[]" value="1">
+                <label for="c1">Concerti</label><br>
+                <input type="checkbox" id="c2" name="categorie[]" value="2">
+                <label for="c2">Teatro</label><br>
+                <input type="checkbox" id="c3" name="categorie[]" value="3">
+                <label for="c3">Ballo</label><br>
+                <input type="checkbox" id="c4" name="categorie[]" value="4">
+                <label for="c4">Conferenze</label><br>
+                <input type="checkbox" id="c5" name="categorie[]" value="5">
+                <label for="c5">Gastronomia</label><br>
+
+                <button type="submit" name="iscrizioni" value="invioIscrizioni">Aggiorna Iscrizioni</button>
+
+            </form>
+
         </div>
-
-
-
 
 
         <script src="tab.js"></script>
