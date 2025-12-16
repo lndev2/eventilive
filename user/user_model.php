@@ -68,7 +68,9 @@ function subscribe(object $conn, string $idUtente, string $idCategoria)
 {
 
 
-    $sql = "INSERT INTO iscrizioni (id_utente, id_categoria) VALUES (?,?);";
+    $sql = "INSERT INTO iscrizioni (id_utente, id_categoria)
+VALUES (?, ?)
+ON DUPLICATE KEY UPDATE id_utente = id_utente;";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ii", $idUtente, $idCategoria);
     $stmt->execute();
@@ -85,4 +87,25 @@ function unsubscribe(object $conn, string $idUtente, string $idCategoria)
     $stmt->bind_param("ii", $idUtente, $idCategoria);
     $stmt->execute();
 
+}
+
+function retrives_subs(object $conn, string $idUtente)
+{
+
+
+    $sql = "SELECT id_categoria FROM iscrizioni WHERE id_utente = ? ";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $idUtente);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    $subs = [];
+
+    while ($row = $result->fetch_row()) {
+
+        $subs[] = $row[0];
+    }
+
+    return $subs;
 }

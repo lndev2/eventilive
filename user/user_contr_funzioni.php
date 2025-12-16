@@ -9,3 +9,22 @@ function is_input_empty(string $titolo, string $categoria , string $città, stri
         return false;
     }
 }
+
+
+function is_subscribed(array $subs, int $idCategoria){
+
+
+
+    for( $i=0; $i < count($subs); $i++){
+
+        if($subs[$i] == $idCategoria){
+            return "checked";
+        }
+
+    }
+
+
+    return false;
+}
+
+
