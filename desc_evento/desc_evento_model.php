@@ -59,7 +59,7 @@ function mod_comment(object $conn, string $userId, string $idEvento, string $com
 
 function del_comment(object $conn, string $userId, string $idEvento)
 {
-    $sql = "DELETE FROM post WHERE id_utente = ? AND id_evento = ?;";
+    $sql = "DELETE FROM post WHERE id_utente = ? AND id_evento = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ii", $userId, $idEvento);
     $stmt->execute();

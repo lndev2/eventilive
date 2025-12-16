@@ -15,6 +15,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once '../connessione.php';
         require_once "../config_session.inc.php";
         require_once "desc_evento_model.php";
+        
+        $userId = $_SESSION["user"]["id_utente"];
+
+        if (isset($_POST["elimina"])) {
+
+            
+            del_comment( $conn,  $userId,  $idEvento);
+            
+
+        }else{
 
 
         $errors = [];
@@ -39,9 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
         }
 
-
-        $userId = $_SESSION["user"]["id_utente"];
-
         if (isset($_POST["invia"])) {
 
             insert_comment($conn, $userId, $idEvento, $commento, $voto);
@@ -52,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             mod_comment($conn, $userId, $idEvento, $commento, $voto);
 
-        }else if (isset($_POST["elimina"])) {
-
-            del_comment( $conn,  $userId,  $idEvento);
         }
+
+        }
+
 
         header("Location: " . $_SERVER['HTTP_REFERER']);
         $conn = null;

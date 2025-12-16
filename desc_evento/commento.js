@@ -51,8 +51,8 @@ function formCommento(idEvento, modifica) {
       let buttonElimina = document.createElement("button");
       buttonElimina.type = "submit";
       buttonElimina.name = "elimina";
-      buttonElimina.textContent = "elimina";
-      buttonElimina.vaue = "elimina";
+      buttonElimina.textContent = "Elimina";
+      buttonElimina.value = "eliminaCommento";
       form.appendChild(buttonElimina);
     }
 
