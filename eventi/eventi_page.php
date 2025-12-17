@@ -23,6 +23,15 @@ require "../partials/navbar.php"
 
     <?php renderNavbar($user); ?>
 
+    <form action="eventi_contr.php" method="GET" >
+        
+        <br>
+        <input type="text" id="provincia" value="<?php echo $provincia?>" name="provincia" placeholder="filtra per provincia" required>
+        <input type="hidden" name="categoria" value="<?php echo $idCategoria ?>">
+        <button type="submit">Cerca</button>
+        <br><br>
+    </form>
+
     <div class="content">
 
         <div class="grid-container-eventi">

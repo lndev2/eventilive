@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function get_user($mysqli, $username) {
+function get_user($mysqli, $username): mixed {
     $query = "SELECT * FROM utenti WHERE nickname = ?"; // Placeholder for prepared statement
     $stmt = $mysqli->prepare($query);
 
