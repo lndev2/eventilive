@@ -47,7 +47,7 @@ require "user_view.php";
 
         <div id="inserisciEvento" class="tabcontent">
             <p>Inserisci Evento</p>
-            <form action="inser_evento_contr.php" method="POST">
+            <form action="evento_contr.php" method="POST">
                 <fieldset>
 
                     <label for="titolo">Titolo</label><br>
@@ -83,7 +83,7 @@ require "user_view.php";
                     <label for="immagine">Carica Immagine:</label>
                     <input type="file" name="immagine"><br><br>
 
-                    <button type="submit">Invia</button>
+                    <button type="submit" name="inserisci" value="inserisciEvento">Invia</button>
 
                 </fieldset>
             </form>

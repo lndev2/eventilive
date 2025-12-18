@@ -40,14 +40,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
         $userId = $_SESSION["user"]["id_utente"];
 
 
-        for($i =0; $i < count($iscrizioni); $i ++){
+        for ($i = 0; $i < count($iscrizioni); $i++) {
 
-            subscribe($conn,$userId,$iscrizioni[$i]);
+            subscribe($conn, $userId, $iscrizioni[$i]);
         }
 
-        for($i =0; $i < count($cancellazioni); $i ++){
+        for ($i = 0; $i < count($cancellazioni); $i++) {
 
-            unsubscribe($conn,$userId,$cancellazioni[$i]);
+            unsubscribe($conn, $userId, $cancellazioni[$i]);
         }
 
         header("Location: " . $_SERVER['HTTP_REFERER']);

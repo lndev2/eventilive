@@ -23,25 +23,7 @@ function display_user_events($events)
 
 
 
-            <tr class="riga-evento" id="<?php echo $evento["id_evento"] ?>">
-                <td><a
-                        href="../desc_evento/desc_evento_contr.php?idEvento=<?php echo $evento['id_evento'] ?>"><?php echo $evento['titolo'] ?></a>
-                </td>
-                <td><?php echo $evento['città'] ?></td>
-                <td><?php echo $evento['luogo'] ?></td>
-                <td><?php echo $evento['data_inizio'] ?></td>
-                <td><?php echo $evento['ora'] ?></td>
-                <td><?php echo $evento['provincia'] ?></td>
-                <td>
-                    <form action="del_evento_contr.php" method="POST" onsubmit="return confermaEliminazione()">
-                        <button type="submit" name="elimina" value="<?php echo $evento['id_evento'] ?> ">Elimina</button>
-                    </form>
-                </td>
-                <td>
-
-                    <!-- modifica -->
-                    <button
-                        onclick='modEventoForm( 
+            <tr class="riga-evento" id="<?php echo $evento["id_evento"] ?>" onclick='modEventoForm( 
                     <?php echo $evento["id_evento"] ?>, 
                     <?php echo json_encode($evento["titolo"], JSON_HEX_QUOT | JSON_HEX_APOS); ?>, 
                     <?php echo json_encode($evento["id_categoria"], JSON_HEX_QUOT | JSON_HEX_APOS); ?>,
@@ -50,12 +32,17 @@ function display_user_events($events)
                     <?php echo json_encode($evento["provincia"], JSON_HEX_QUOT | JSON_HEX_APOS); ?>, 
                     <?php echo json_encode($evento["data_inizio"], JSON_HEX_QUOT | JSON_HEX_APOS); ?>,
                     <?php echo json_encode($evento["ora"], JSON_HEX_QUOT | JSON_HEX_APOS); ?>,
-                    <?php echo json_encode($evento["descrizione"], JSON_HEX_QUOT | JSON_HEX_APOS); ?> )'>Modifica</button>
+                    <?php echo json_encode($evento["descrizione"], JSON_HEX_QUOT | JSON_HEX_APOS); ?> )'>
+                <td><a
+                        href="../desc_evento/desc_evento_contr.php?idEvento=<?php echo $evento['id_evento'] ?>"><?php echo $evento['titolo'] ?></a>
                 </td>
-
+                <td><?php echo $evento['città'] ?></td>
+                <td><?php echo $evento['luogo'] ?></td>
+                <td><?php echo $evento['data_inizio'] ?></td>
+                <td><?php echo $evento['ora'] ?></td>
+                <td><?php echo $evento['provincia'] ?></td>
 
             </tr>
-
 
 
             <?php

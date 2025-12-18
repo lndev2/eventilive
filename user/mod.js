@@ -153,11 +153,22 @@ function modEventoForm(idEvento,titolo,idCategoria,città,luogo,provincia,data,o
     fieldset.appendChild(document.createElement("br"));
 
     // Submit
-    const btn = document.createElement("button");
-    btn.type = "submit";
-    btn.name = "modifica";
-    btn.textContent = "Invia";
-    fieldset.appendChild(btn);
+    const btnModifica = document.createElement("button");
+    btnModifica.type = "submit";
+    btnModifica.name = "modifica";
+    btnModifica.value = "modifica";
+    btnModifica.textContent = "Modifica";
+    fieldset.appendChild(btnModifica);
+
+    const btnElimina = document.createElement("button");
+    btnElimina.type = "submit";
+    btnElimina.name = "elimina";
+    btnElimina.value = "elimina";
+    btnElimina.textContent = "Elimina";
+    btnElimina.onclick = confermaEliminazione;
+
+
+    fieldset.appendChild(btnElimina);
 
     const inputIdEvento = document.createElement("input");
     inputIdEvento.id = "inputIdEvento";
