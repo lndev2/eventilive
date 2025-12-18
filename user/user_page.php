@@ -11,7 +11,7 @@ require "user_view.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style/navbar.css">
-    <link rel="stylesheet" href="../style/user_tab.css">
+    <link rel="stylesheet" href="../style/user.css">
 </head>
 
 <body>
@@ -31,8 +31,18 @@ require "user_view.php";
 
         <!-- Tab content -->
         <div id="eventiInseriti" class="tabcontent">
-            <p>Eventi Inseriti</p>
-            <?php display_user_events($result) ?>
+            
+
+            <div class="contenitore-main-eventi">
+                <div class="elenco-eventi">
+                    <p class="eventi-inseriti">Eventi Inseriti</p>
+                    <?php display_user_events($result) ?>
+                </div>
+                <div id="form-modifica-evento" class="form-modifica-evento">
+                    
+                </div>
+            </div>
+
         </div>
 
         <div id="inserisciEvento" class="tabcontent">
@@ -42,7 +52,6 @@ require "user_view.php";
 
                     <label for="titolo">Titolo</label><br>
                     <input type="text" name="titolo" required></input><br><br>
-
 
                     <label for="categoria">Categoria</label><br>
                     <select name="categoria" required>
@@ -83,7 +92,7 @@ require "user_view.php";
         <div id="visualizzaIscrizioni" class="tabcontent">
 
             <?php display_subs($subs) ?>
- 
+
         </div>
 
 

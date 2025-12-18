@@ -23,7 +23,7 @@ function display_user_events($events)
 
 
 
-            <tr>
+            <tr class="riga-evento" id="<?php echo $evento["id_evento"] ?>">
                 <td><a
                         href="../desc_evento/desc_evento_contr.php?idEvento=<?php echo $evento['id_evento'] ?>"><?php echo $evento['titolo'] ?></a>
                 </td>
@@ -38,6 +38,8 @@ function display_user_events($events)
                     </form>
                 </td>
                 <td>
+
+                    <!-- modifica -->
                     <button
                         onclick='modEventoForm( 
                     <?php echo $evento["id_evento"] ?>, 
@@ -54,13 +56,6 @@ function display_user_events($events)
 
             </tr>
 
-            <tr>
-                <td colspan="8">
-                    <div id="<?php echo $evento['id_evento'] ?>" class="modevento">
-
-                    </div>
-                </td>
-            </tr>
 
 
             <?php

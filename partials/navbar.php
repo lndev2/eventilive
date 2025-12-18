@@ -25,12 +25,8 @@ function renderNavbar($user = null)
     <?php else: ?>
 
       <div class="dati-utente">
-        <a href="../signup/signup_page.php">LogIN</a>
-        <a href="../signup/signup_page.php">SignUp</a>
+        <a href="../signup/signup_page.php">LogIn</a>
       </div>
-
-
-
 
     <?php endif; ?>
 

@@ -34,3 +34,25 @@
   border-top: none;
 }
 
+.contenitore-main-eventi {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+
+}
+
+.eventi-inseriti{
+
+  margin-bottom: 10%;
+
+
+
+}
+
+
+.evento-selezionato{
+
+  background-color: aqua;
+
+}

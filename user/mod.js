@@ -1,11 +1,29 @@
+function colorEventRow(idEvento){
+
+  let rows = document.querySelectorAll('.riga-evento');
+
+  rows.forEach(element => {
+        element.classList.remove('evento-selezionato');
+  });
+
+
+  const row = document.getElementById(idEvento);
+  row.classList.add('evento-selezionato');
+
+}
+
+
 function modEventoForm(idEvento,titolo,idCategoria,città,luogo,provincia,data,ora,descrizione) {
-  const div = document.getElementById(idEvento);
+
+  colorEventRow(idEvento);
+
+  const div = document.getElementById('form-modifica-evento');
 
   if (div.firstElementChild) {
     while (div.firstElementChild) {
       div.removeChild(div.firstElementChild);
     }
-  } else {
+  }
     // Titolo
     const title = document.createElement("p");
     title.textContent = "Modifica Evento";
@@ -151,7 +169,7 @@ function modEventoForm(idEvento,titolo,idCategoria,città,luogo,provincia,data,o
     // Montaggio finale
     form.appendChild(fieldset);
     div.appendChild(form);
-  }
+  
 }
 
 

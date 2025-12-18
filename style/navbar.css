@@ -18,10 +18,6 @@ body {
   background-color: #8b4949;
 }
 
-
-
-
-
 .content {
   flex: 1; /* Questo permette alla sezione di contenuto di occupare lo spazio rimanente */
   background-color: whitesmoke;
@@ -36,33 +32,36 @@ body {
   text-decoration: none;
 }
 .navbar a:hover {
-  background-color: #ddd;
+  background-color: #f84747;
   color: black;
 }
 
 .home {
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
+
+
 
 .dati-utente {
   display: flex;
-  gap: 20px;
   text-align: right;
   align-items: center;
   color: antiquewhite;
   margin: 0;
-  font-size: medium;
+  font-size: 1.5vw;
   float: right;
 }
 
 .dati {
+  font-size: 1.3vw;
   color: antiquewhite;
   margin-inline-end: 15px;
   display: inline;
 }
 
 .dati.nickname {
-  font-size: 20px;
+
+  font-size: 1.3vw;
   font-weight: bolder;
   display: inline;
 }
