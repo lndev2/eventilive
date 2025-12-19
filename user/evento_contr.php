@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
         if (isset($_POST["elimina"])) {
 
-            echo "eliminazione";
+           
             del_event($conn, $idEvento);
-
+            
 
         } else {
 
@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
             if (isset($_POST["modifica"])) {
                 mod_event($conn, $idEvento, $titolo, $categoria, $città, $luogo, $provincia, $data, $ora, $descrizione);
+                
             }
 
 

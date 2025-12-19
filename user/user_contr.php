@@ -6,7 +6,7 @@ require "user_contr_funzioni.php";
 
 if (isset($_SESSION['user'])) {
 
-    
+    $user = $_SESSION['user'] ?? null;
     $id_utente = $_SESSION['user']["id_utente"];
 
 

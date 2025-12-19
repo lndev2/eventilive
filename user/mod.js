@@ -31,7 +31,7 @@ function modEventoForm(idEvento,titolo,idCategoria,città,luogo,provincia,data,o
 
     // Form
     const form = document.createElement("form");
-    form.action = "mod_evento_contr.php";
+    form.action = "evento_contr.php";
     form.method = "POST";
 
     const fieldset = document.createElement("fieldset");
