@@ -6,17 +6,30 @@ require "desc_evento_model.php";
 require "desc_evento_contr_funzioni.php";
 
 
+if (isset($_SESSION["user"])) {
 
-if(isset($_GET["idEvento"])){
+    $user = $_SESSION['user'];
+    $userId = $_SESSION['user']['id_utente'];
+    $conn = Database::user();
+
+} else {
+
+    $user = null;
+    $conn = Database::guest();
+}
 
 
 
-$idEvento = $_GET["idEvento"];
+if (isset($_GET["idEvento"])) {
 
 
 
-$result = retrieves_event_desc($conn, $idEvento);
-$post = retrives_posts( $conn,  $idEvento);
+    $idEvento = $_GET["idEvento"];
+
+
+
+    $result = retrieves_event_desc($conn, $idEvento);
+    $post = retrives_posts($conn, $idEvento);
 
 
 
@@ -24,16 +37,8 @@ $post = retrives_posts( $conn,  $idEvento);
 }
 
 
-$user = $_SESSION['user'] ?? null;
-$userId = $_SESSION['user']['id_utente'];
+
+
 
 require "desc_evento_page.php";
 ?>
-
-
-
-
-
-
-
-

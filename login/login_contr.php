@@ -17,6 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once 'login_model.inc.php';
         require_once 'login_contr_funzioni.php';
 
+        if (isset($_SESSION["user"])) {
+
+            $user = $_SESSION['user'];
+            $conn = Database::user();
+
+        } else {
+
+            $user = null;
+            $conn = Database::guest();
+
+        }
 
         //ERROR HANDLERS 
         // L'attributo required nelle tag HTML può essere rimosso lato frontend e bypassato
@@ -74,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         ];
 
-        
+
         //$_SESSION["user_username"] = htmlspecialchars($result["username"]); //nome da mostrare sul sito viene sanitazzazione dell output
         $_SESSION["last_regeneration"] = time(); //sessione appena creata 
 

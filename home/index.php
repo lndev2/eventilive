@@ -1,7 +1,8 @@
 <?php
 
-require '../partials/navbar.php';
 require 'home.contr.php';
+require '../partials/navbar.php';
+
 ?>
 
 

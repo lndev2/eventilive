@@ -1,7 +1,7 @@
 <?php
 
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
 
     $username = $_POST["username"];
     $nome = $_POST["nome"];
@@ -15,12 +15,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once 'signup_model.php';
         //view
         require_once 'signup_contr_funzioni.php';
+        $conn = Database::guest();
+
+        
+
 
 
         //ERROR HANDLERS 
         $errors = [];
 
-        if (is_input_empty($username,  $nome,  $cognome,   $pwd,  $email)) {
+        if (is_input_empty($username, $nome, $cognome, $pwd, $email)) {
             $errors["empty_input"] = "Fill in all fields!";
         }
         if (is_email_invalid($email)) {
@@ -55,13 +59,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["errors_signup"] = null;
         $_SESSION["signup_data"] = null;
 
-        create_user( $conn,  $username,  $nome,  $cognome,  $email,  $pwd );
+        create_user($conn, $username, $nome, $cognome, $email, $pwd);
 
-        
-        
+
+
         header("Location: ../home/index.php?signup=success");
-        
-        
+
+
         $conn = null;
         $stmt = null;
         die();
@@ -73,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 } else { //se il request method non è POST l'utente non è arrivato alla pagina correttamente ...
 
-    
+
 
 
     header("Location: signup_page.php?");

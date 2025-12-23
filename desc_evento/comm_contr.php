@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
 
         $userId = $_SESSION["user"]["id_utente"];
+        $conn = Database::user();
 
         if (isset($_POST["elimina"])) {
 
@@ -38,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
                 $_SESSION["errori_post"] = $errors;
 
+                //completare display
                 header("Location: " . $_SERVER['HTTP_REFERER']);
                 exit();
             }
@@ -45,7 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
             if (isset($_POST["invia"])) {
 
                 insert_comment($conn, $userId, $idEvento, $commento, $voto);
-
 
 
             } else if (isset($_POST["modifica"])) {
