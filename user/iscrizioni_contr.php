@@ -4,6 +4,9 @@ require_once "../config_session.inc.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
+
+
+
     if (isset($_POST["categorie"])) {
 
         $iscrizioni = $_POST["categorie"];
@@ -35,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
         require_once '../connessione.php';
         require_once "user_model.php";
-
+        $conn = Database::user();
 
         $userId = $_SESSION["user"]["id_utente"];
 

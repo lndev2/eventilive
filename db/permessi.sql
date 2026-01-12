@@ -15,6 +15,6 @@ GRANT INSERT ON eventilive.utenti TO 'db_guest'@'localhost';
 
 GRANT SELECT ON eventilive.categorie TO 'db_user'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON eventilive.eventi TO 'db_user'@'localhost';
-GRANT SELECT, INSERT, DELETE ON eventilive.iscrizioni TO 'db_user'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON eventilive.iscrizioni TO 'db_user'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON eventilive.post TO 'db_user'@'localhost';
 GRANT SELECT ON eventilive.utenti TO 'db_user'@'localhost';
