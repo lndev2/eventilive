@@ -1,6 +1,7 @@
 <?php
 require_once "../config_session.inc.php";
 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
     $idEvento = $_POST["idEvento"];
@@ -17,15 +18,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
     try {
 
         require_once '../connessione.php';
+        if (isset($_SESSION["user"])) {
+
+            $user = $_SESSION['user'];
+            $conn = Database::user();
+
+        } else {
+
+            $user = null;
+            $conn = Database::guest();
+
+        }
         require_once "user_contr_funzioni.php";
         require_once "user_model.php";
 
 
         if (isset($_POST["elimina"])) {
 
-           
+
             del_event($conn, $idEvento);
-            
+
 
         } else {
 
@@ -49,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
             if (isset($_POST["modifica"])) {
                 mod_event($conn, $idEvento, $titolo, $categoria, $città, $luogo, $provincia, $data, $ora, $descrizione);
-                
+
             }
 
 

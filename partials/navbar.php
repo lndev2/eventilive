@@ -5,6 +5,15 @@ function renderNavbar($user = null)
 
   <div class="navbar">
 
+    <!-- navigazione indietro -->
+    <?php
+    if (isset($_SERVER['HTTP_REFERER'])) {
+      ?>
+      <a class="home" href="<?php echo htmlspecialchars($_SERVER['HTTP_REFERER']); ?>"><</a>
+      <?php
+    }
+    ?>
+
     <a class="home" href="../home/index.php">Home</a>
 
     <!-- se loggato -->

@@ -1,9 +1,24 @@
 <?php
 
 require_once '../config_session.inc.php';
+require_once '../connessione.php';
 require_once 'signup_view.php';
 require_once '../login/login_view.inc.php';
 require_once '../partials/navbar.php';
+
+
+if (isset($_SESSION["user"])) {
+
+    $user = $_SESSION['user'];
+    $conn = Database::user();
+
+} else {
+
+
+    $user = null;
+    $conn = Database::guest();
+
+}
 
 ?>
 

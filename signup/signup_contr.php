@@ -15,9 +15,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
         require_once 'signup_model.php';
         //view
         require_once 'signup_contr_funzioni.php';
-        $conn = Database::guest();
-
         
+        if (isset($_SESSION["user"])) {
+
+            $user = $_SESSION['user'];
+            $userId = $_SESSION['user']['id_utente'];
+            $conn = Database::user();
+
+        } else {
+
+            $user = null;
+            $conn = Database::guest();
+
+        }
+
+
 
 
 
