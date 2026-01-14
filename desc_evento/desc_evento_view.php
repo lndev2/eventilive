@@ -47,27 +47,31 @@ function display_event_posts(object $result)
 
 
     if ($result->num_rows > 0) {
-        ?>
 
 
-        <div class="commenti">
+
+        echo '<div class="commenti">';
+
+
+        while ($row = $result->fetch_assoc()) {
+
+            ?>
+
+            <div class="commento">
+                <p class="nickname"><?php echo $row["nickname"] ?></p><br>
+                <p><?php echo $row["commento"] ?></p><br>
+                <p><?php echo "Voto " . $row["voto"] ?></p>
+            </div>
+
+
 
             <?php
-            while ($row = $result->fetch_assoc()) {
-
-                ?>
-
-                <div class="commento">
-                    <p class="nickname"><?php echo $row["nickname"] ?></p><br>
-                    <p><?php echo $row["commento"] ?></p><br>
-                    <p><?php echo "Voto " . $row["voto"] ?></p>
-                    <div>
+        }
 
 
 
-                        <?php
-            }
-            echo '</div>';
+        echo '</div>';
+
 
 
     } else {
@@ -91,23 +95,22 @@ function display_inserisci_commento(object $conn, ?string $idEvento, ?string $us
             ?>
 
 
-                        <button onclick="formCommento(<?php echo $idEvento ?>,true)">Modifica Commento</button>
-                        <div id="form-commento" class="form-commento">
-                        </div>
+            <button onclick="formCommento(<?php echo $idEvento ?>,true)">Modifica Commento</button>
+            <div id="form-commento" class="form-commento">
+            </div>
 
-
-                        <?php
+            <?php
         } else {
 
             ?>
 
 
-                        <button onclick="formCommento(<?php echo $idEvento ?>, false)">Inserisci Commento</button>
-                        <div id="form-commento" class="form-commento">
-                        </div>
+            <button onclick="formCommento(<?php echo $idEvento ?>, false)">Inserisci Commento</button>
+            <div id="form-commento" class="form-commento">
+            </div>
 
 
-                        <?php
+            <?php
 
         }
 

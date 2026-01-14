@@ -1,49 +1,12 @@
-<div id="form-modifica-evento" class="form-modifica-evento">
-  <p>Modifica Evento</p>
-  <form action="evento_contr.php" method="POST">
-    <fieldset>
-      <label for="titolo">Titolo</label><br /><input
-        type="text"
-        name="titolo"
-        required=""
-      /><br /><br /><label for="categoria">Categoria</label><br /><select
-        name="categoria"
-        required=""
-      >
-        <option value="1">Concerti</option>
-        <option value="2">Teatro</option>
-        <option value="3">Ballo</option>
-        <option value="4">Conferenze</option>
-        <option value="5">Gastronomia</option></select
-      ><br /><br /><label for="città">Città</label><br /><input
-        type="text"
-        name="città"
-      /><br /><br /><label for="luogo">Luogo</label><br /><input
-        type="text"
-        name="luogo"
-      /><br /><br /><label for="provincia">Provincia</label><br /><input
-        type="text"
-        name="provincia"
-      /><br /><br /><label for="data">Data</label
-      ><input type="date" name="data" /><br /><br /><label for="ora">Ora</label
-      ><br /><input type="time" name="ora" /><br /><br /><label
-        for="descrizione"
-        >Descrizione</label
-      ><br /><textarea
-        name="descrizione"
-        rows="4"
-        cols="50"
-        required=""
-      ></textarea
-      ><br /><br /><label for="immagine">Carica Immagine:</label
-      ><input type="file" name="immagine" /><br /><br /><button
-        type="submit"
-        name="modifica"
-        value="modifica"
-      >
-        Modifica</button
-      ><button type="submit" name="elimina" value="elimina">Elimina</button
-      ><input id="inputIdEvento" type="hidden" name="idEvento" value="11" />
-    </fieldset>
-  </form>
-</div>
+<form id="cform" method="POST" action="comm_contr.php">
+  <textarea name="commento" placeholder="Scrivi il tuo commento..."></textarea
+  ><br /><input
+    name="voto"
+    type="number"
+    min="0"
+    max="10"
+    placeholder="inserisci voto"
+  /><button type="submit" name="modifica" value="inviaCommento">Modifica</button
+  ><button type="submit" name="elimina" value="eliminaCommento">Elimina</button
+  ><input type="hidden" name="idEvento" value="1" />
+</form>

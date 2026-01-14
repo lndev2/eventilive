@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .img {
@@ -8,12 +8,206 @@
   background-repeat: no-repeat; /* Non ripetere l'immagine */
   background-position: center; /* Centra l'immagine */
 }
-
+/* Stile generale per il box descrizione */
 .descrizione {
-  text-align: center;
-  align-items: center;
-  border: 2px solid black;  /* Larghezza, stile e colore del bordo */
-  border-radius: 10%;      /* Angoli arrotondati */
-  padding: 10px;            /* Spaziatura interna opzionale */
-  margin: 5%;
+    background-color: #fff; /* sfondo bianco */
+    padding: 15px 20px;
+    max-width: 500px;       /* dimensione simile ai form */ 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1.5);
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+
+    border:solid;
+    border:3px;
+
+    margin: 50px 0px 10px 100px;
+    
+}
+
+/* Titolo principale */
+.descrizione h2 {
+    font-size: 1.5em;
+    color: #310650;          /* viola scuro coerente */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Paragrafi informativi */
+.descrizione p {
+    font-size: 1em;
+    margin: 5px 0;           /* margini più piccoli e uniformi */
+    color: #333;
+}
+
+/* Eventuali paragrafi speciali */
+.descrizione p:nth-of-type(6), /* Categoria */
+.descrizione p:nth-of-type(7)  /* Username o altri dati */
+{
+    font-weight: bold;
+    color: #310650;           /* viola scuro per evidenziare */
+}
+
+/* Separatore tra blocchi (opzionale) */
+.descrizione p + p {
+    border-top: 1px solid #e6e6fa; /* linea viola chiara */
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stile generale per il contenitore commenti */
+.commenti {
+    max-width: 600px;
+    margin: 20px ;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+}
+
+/* Singolo commento */
+.commento {
+    border: 1px solid #4c4c5a; /* linea chiara tra commenti */
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    background-color: #f9f7ff; /* leggero viola chiaro */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Effetto hover sul commento */
+.commento:hover {
+   
+    box-shadow: 0 4px 15px rgba(49, 6, 80, 0.15);
+}
+
+/* Nickname */
+.commento .nickname {
+    font-weight: bold;
+    color: #310650; /* viola scuro coerente */
+    margin-bottom: 5px;
+}
+
+/* Testo del commento */
+.commento p:not(.nickname) {
+    margin: 5px 0;
+}
+
+/* Voto */
+.commento p:last-child {
+    font-style: italic;
+    color: #4b146f; /* viola più chiaro per il voto */
+    font-weight: bold;
+}
+
+
+button {
+  background-color: #310650; /* viola scuro */
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    font-size: 0.95em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 40px;
+    margin-top: 50px;
+
+}
+
+
+
+button[type="submit"]:hover {
+    background-color: #4b146f; /* viola più chiaro on hover */
+}
+
+/* Stile generale per il form commenti */
+#cform {
+    
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+    
+}
+
+/* Textarea per il commento */
+#cform textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #310650; /* bordo viola scuro */
+    border-radius: 4px;
+    font-size: 1em;
+    resize: vertical;
+    background-color: #fff;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Input voto */
+#cform input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #310650; /* bordo viola scuro */
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fff;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Effetto focus su textarea e input */
+#cform textarea:focus,
+#cform input[type="number"]:focus {
+    outline: none;
+    border-color: #4b146f; /* viola più chiaro */
+    box-shadow: 0 0 5px rgba(49, 6, 80, 0.5);
+}
+
+/* Pulsanti */
+#cform button {
+    background-color: #310650; /* viola scuro */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+/* Hover pulsanti */
+#cform button:hover {
+    background-color: #4b146f; /* viola più chiaro */
+}
+
+/* Pulsante elimina rosso */
+#cform button[name="elimina"] {
+    background-color: #a00; /* rosso scuro */
+}
+
+#cform button[name="elimina"]:hover {
+    background-color: #d22; /* rosso più chiaro */
 }
