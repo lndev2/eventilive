@@ -13,7 +13,7 @@ function display_event_desc(object $result)
 
         //echo '<div class="evento" style="background-image: url(' . $row["immagine"] . ');">';
 
-        $immagine = $row[9];
+        $immagine = $row[8];
 
         echo '<div class="container">';
 
@@ -28,7 +28,6 @@ function display_event_desc(object $result)
         echo '<p>' . $row[5] . '</p><br>';
         echo '<p>' . $row[6] . '</p><br>';
         echo '<p>' . $row[7] . '</p><br>';
-        echo '<p>' . $row[8] . '</p><br>';
         echo '</div>';
 
         echo '<div class="img" style="background-image: url(\'' . $immagine . '\');"></div>';

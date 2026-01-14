@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST["username"];
     $pwd = $_POST["pwd"]; //password inserita
 
-    //echo $username;
-    //echo $pwd;
+    echo $username;
+    echo $pwd;
 
     try {
 
@@ -17,33 +17,45 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once 'login_model.inc.php';
         require_once 'login_contr_funzioni.php';
 
+
         if (isset($_SESSION["user"])) {
+
+
 
             $user = $_SESSION['user'];
             $conn = Database::user();
 
+
+
         } else {
+
+
 
             $user = null;
             $conn = Database::guest();
+
+
 
         }
 
         //ERROR HANDLERS 
         // L'attributo required nelle tag HTML può essere rimosso lato frontend e bypassato
-
+        
         $errors = [];
-
         if (is_input_empty($username, $pwd)) {
+            
+            
+            
 
             $errors["empty_input"] = "Fill in all fields!";
 
             //echo "empty";
             //print_r($errors);
         } else {
-
+   
             $result = get_user($conn, $username);
-
+            print_r ($result);
+            
 
             if (is_username_wrong($result)) {
                 $errors["login_incorrect"] = "Incorrect login info!";
@@ -53,11 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $errors["login_incorrect"] = "Incorrect login info!";
             }
         }
-
-
+        
 
         require_once "../config_session.inc.php";
-
+        
 
         if ($errors) {
 
