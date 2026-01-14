@@ -24,13 +24,10 @@ function modEventoForm(idEvento,titolo,idCategoria,città,luogo,provincia,data,o
       div.removeChild(div.firstElementChild);
     }
   }
-    // Titolo
-    const title = document.createElement("p");
-    title.textContent = "Modifica Evento";
-    div.appendChild(title);
 
     // Form
     const form = document.createElement("form");
+    form.className = "form-mod-style";
     form.action = "evento_contr.php";
     form.method = "POST";
 

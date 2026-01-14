@@ -1,8 +1,15 @@
-/* Style the tab */
+.titolo {
+  text-align: center;
+
+}
+
+
+/* Style the tab container */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: 1px solid #310650; /* bordo viola scuro */
+  background-color: #f5f3f8; /* viola chiaro */
+  border-radius: 8px; /* arrotondato come il form */
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -13,46 +20,44 @@
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
-  transition: 0.3s;
+  transition: background-color 0.3s ease;
+  color: #310650; /* testo viola scuro */
+  font-weight: bold;
+  border-radius: 4px 4px 0 0; /* arrotondato solo in alto */
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #4b146f; /* viola più chiaro */
+  color: #fff; /* testo bianco */
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #ccc;
+  background-color: #310650; /* viola scuro */
+  color: #fff; /* testo bianco */
 }
 
 /* Style the tab content */
 .tabcontent {
   display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+  padding: 12px;
+  border: 1px solid #310650; /* bordo viola scuro */
+  
+  background-color: #fff; /* sfondo bianco */
+  border-radius: 0 0 8px 8px; /* arrotondato solo in basso */
 }
+
 
 .contenitore-main-eventi {
-
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
-
 }
 
-.eventi-inseriti{
-
+.eventi-inseriti {
   margin-bottom: 10%;
-
-
-
 }
 
-
-.evento-selezionato{
-
-  background-color: aqua;
-
+.evento-selezionato {
+  background-color: rgba(162, 0, 255, 0.548);
 }

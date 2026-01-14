@@ -19,7 +19,7 @@ require "user_view.php";
     <div class="content">
 
         <?php renderNavbar($user) ?>
-        <h1>Area personale <?php echo $user["nickname"] ?></h1>
+        <h1 class="titolo">Area personale <?php echo $user["nickname"] ?></h1>
         <br><br>
 
 
@@ -29,6 +29,7 @@ require "user_view.php";
             <button class="tablinks" onclick="changeTab(event, 'inserisciEvento')">Inserisci Evento</button>
             <button class="tablinks" onclick="changeTab(event, 'visualizzaIscrizioni')">Iscrizioni</button>
         </div>
+        
 
         <!-- Tab content -->
         <div id="eventiInseriti" class="tabcontent">
@@ -36,7 +37,7 @@ require "user_view.php";
 
             <div class="contenitore-main-eventi">
                 <div class="elenco-eventi">
-                    <p class="eventi-inseriti">Eventi Inseriti</p>
+                    
                     <?php display_user_events($result) ?>
                 </div>
                 <div id="form-modifica-evento" class="form-modifica-evento">
@@ -45,8 +46,9 @@ require "user_view.php";
             </div>
 
         </div>
-
+        
         <div id="inserisciEvento" class="tabcontent">
+            
             <p>Inserisci Evento</p>
             <form action="evento_contr.php" method="POST">
                 <fieldset>
