@@ -12,6 +12,7 @@ require "user_view.php";
     <title>Document</title>
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/user.css">
+    <link rel="stylesheet" href="../style/main.css">
 </head>
 
 <body>

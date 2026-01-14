@@ -1,0 +1,127 @@
+/* Stile generale per il tab content */
+#inserisciEvento {
+    background-color: #fff; /* sfondo bianco */
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Titolo del form */
+#inserisciEvento p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #310650; /* viola scuro */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Label */
+#inserisciEvento label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #310650; /* viola scuro */
+}
+
+/* Input, select e textarea */
+#inserisciEvento input[type="text"],
+#inserisciEvento input[type="date"],
+#inserisciEvento input[type="time"],
+#inserisciEvento input[type="file"],
+#inserisciEvento select,
+#inserisciEvento textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #310650; /* bordo viola scuro */
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Pulsante */
+#inserisciEvento button[type="submit"] {
+    background-color: #310650; /* viola scuro */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#inserisciEvento button[type="submit"]:hover {
+    background-color: #4b146f; /* viola più chiaro al passaggio del mouse */
+}
+
+/* Effetto focus sugli input */
+#inserisciEvento input:focus,
+#inserisciEvento select:focus,
+#inserisciEvento textarea:focus {
+    outline: none;
+    border-color: #4b146f; /* evidenziazione viola chiaro */
+    box-shadow: 0 0 5px rgba(49, 6, 80, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Stile tabella alternativa: nessuna linea verticale */
+table {
+    width: 100%;
+    border-collapse: collapse; /* nessuna doppia linea */
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+/* Intestazioni con colore di sfondo */
+table th {
+    background-color: #310650; /* viola scuro */
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 2px solid #4b146f; /* bordo viola chiaro */
+}
+
+/* Celle senza bordo verticale, solo separatori orizzontali */
+table td {
+    padding: 10px;
+    border-top: 1px solid #e6e6fa; /* linea orizzontale molto chiara */
+    border-right: none;
+    border-left: none;
+    color: #333;
+}
+
+/* Stile per link nelle celle */
+table td a {
+    color: #310650;            /* viola scuro coerente */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table td a:hover {
+    color: #4b146f;            /* viola più chiaro on hover */
+    text-decoration: underline;
+}
+
+/* Opzionale: testo centrato per colonne specifiche */
+table th.center,
+table td.center {
+    text-align: center;
+}

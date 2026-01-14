@@ -16,6 +16,8 @@ require "../partials/navbar.php"
     <link rel="stylesheet" href="../style/eventi.css">
     </link>
     <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/main.css">
+    
     </link>
 </head>
 
@@ -28,7 +30,7 @@ require "../partials/navbar.php"
         <br>
         <input type="text" id="provincia" value="<?php echo $provincia?>" name="provincia" placeholder="filtra per provincia" required>
         <input type="hidden" name="categoria" value="<?php echo $idCategoria ?>">
-        <button type="submit">Cerca</button>
+        <button class="btn-rosso" type="submit">Cerca</button>
         <br><br>
     </form>
 
