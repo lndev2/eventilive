@@ -2,25 +2,29 @@
   display: flex;
   justify-content: center; /* Allinea orizzontalmente */
   align-items: center; /* Allinea verticalmente */
-  padding: 2%;
-  font-size: 3vw;
+  padding: 0.1%;
+  font-size: 5vw;
   flex: 1;
+ 
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+  
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 2px;
+  gap: 0px;
 }
 
 .grid-item {
-  color: antiquewhite;
+  color: rgb(255, 255, 255);
   display: flex;
   background-color: rgba(13, 71, 220, 0.8);
   /*border: 1px solid rgba(0, 0, 0, 0.8); */
   text-decoration: none; /* rimuove sottolineatura dall'intero link */
 
-  font-size: 2vw;
+  font-size: 3vw;
   justify-content: center; /* Allinea orizzontalmente */
   align-items: center; /* Allinea verticalmente */
 
@@ -31,6 +35,11 @@
   background-repeat: no-repeat; /* Non ripetere l'immagine */
   background-position: center; /* Centra l'immagine */
   opacity: 0.8;
+}
+
+.titolo {
+
+  color:antiquewhite;
 }
 
 .grid-item:hover {

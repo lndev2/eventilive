@@ -47,7 +47,7 @@ require "user_view.php";
 
         </div>
         
-        <div id="inserisciEvento" class="tabcontent">
+        <div id="inserisciEvento" class="tabcontent form-mod-style">
             
             <p>Inserisci Evento</p>
             <form action="evento_contr.php" method="POST">

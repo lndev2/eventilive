@@ -31,6 +31,7 @@ if (isset($_SESSION["user"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/signup_page.css">
+    
     <title>Document</title>
 </head>
 
@@ -44,7 +45,7 @@ if (isset($_SESSION["user"])) {
         <div class="container">
 
             <h3>login</h3><br>
-            <form action="../login/login_contr.php" method="post">
+            <form class="form-mod-style" action="../login/login_contr.php" method="post">
 
                 <fieldset>
 
@@ -62,7 +63,7 @@ if (isset($_SESSION["user"])) {
         <div class="container">
 
             <h3>Signup</h3><br>
-            <form action="signup_contr.php" method="POST">
+            <form class="form-mod-style" action="signup_contr.php" method="POST">
 
 
                 <fieldset>

@@ -3,7 +3,7 @@
 require "eventi_view.php";
 require "../partials/navbar.php"
 
-    ?>
+?>
 
 
 
@@ -17,7 +17,7 @@ require "../partials/navbar.php"
     </link>
     <link rel="stylesheet" href="../style/navbar.css">
     <link rel="stylesheet" href="../style/main.css">
-    
+
     </link>
 </head>
 
@@ -25,12 +25,13 @@ require "../partials/navbar.php"
 
     <?php renderNavbar($user); ?>
 
-    <form action="eventi_contr.php" method="GET" >
-        
+    <form class="filtra" action="eventi_contr.php" method="GET">
+
         <br>
-        <input type="text" id="provincia" value="<?php echo $provincia?>" name="provincia" placeholder="filtra per provincia" required>
+        <input  type="text" id="provincia" value="<?php echo $provincia ?>" name="provincia"
+            placeholder="filtra per provincia" required>
         <input type="hidden" name="categoria" value="<?php echo $idCategoria ?>">
-        <button class="btn-rosso" type="submit">Cerca</button>
+        <button class="button1" type="submit">Cerca</button>
         <br><br>
     </form>
 

@@ -1,50 +1,70 @@
 .container2 {
-  
-  display: flex;
-  flex-direction: column; /* disposizione a colonna */
-  justify-content: center; /* Allinea orizzontalmente */
-  align-items: center; /* Allinea verticalmente */
-  text-align: center;
-  margin: 1%;
+    display: flex;
+    flex-direction: column; /* disposizione a colonna */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1%;
+    font-family: Arial, sans-serif;
 }
 
+/* Contenitore principale */
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;          /* spazio tra elementi */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
 
-  padding: 30px;
-  margin: 5% auto;
-  max-width: 600px;
+    padding: 30px;
+    margin: 5% auto;
+    max-width: 600px;
 
-  background: #f9f9f9;      /* grigio molto chiaro */
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;      /* angoli leggermente arrotondati */
+    background: #fff; /* coerente con i form */
+    border: 2px solid #310650; /* viola scuro */
+    border-radius: 12px;
 
-  text-align: center;
-  color: #333;              /* testo scuro ma non nero */
-  font-family: "Inter", sans-serif;
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif;
 
-  border: solid 2px black;
+    box-shadow: 0 4px 10px rgba(49, 6, 80, 0.1);
 }
 
-input {
+/* Input */
+.container input {
+    width: 100%;
+    padding: 8px 10px;
     margin: 3px;
+
+    border: 1px solid #310650;
+    border-radius: 6px;
+    font-size: 14px;
+
+    box-sizing: border-box;
 }
 
-button {
-  padding: 10px 20px;
-  background: #ffffff;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  color: #333;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.2s ease;
+/* Focus input */
+.container input:focus {
+    outline: none;
+    border-color: #4b146f;
+    box-shadow: 0 0 5px rgba(49, 6, 80, 0.4);
 }
 
-button:hover {
-  background: #f2f2f2;
+/* Pulsanti */
+.container button {
+    padding: 10px 20px;
+    background: #310650; /* viola scuro */
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover pulsanti */
+.container button:hover {
+    background: #4b146f;
+    transform: translateY(-1px);
 }

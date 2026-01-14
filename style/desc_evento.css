@@ -64,6 +64,20 @@
 
 
 
+.istruzioni {
+    font-size: 1.5vw;
+    margin-left: 40px;
+    color: #4b146f;
+
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -117,25 +131,10 @@
 }
 
 
-button {
-  background-color: #310650; /* viola scuro */
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    font-size: 0.95em;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 40px;
-    margin-top: 50px;
-
-}
 
 
 
-button[type="submit"]:hover {
-    background-color: #4b146f; /* viola più chiaro on hover */
-}
+
 
 /* Stile generale per il form commenti */
 #cform {
@@ -210,4 +209,34 @@ button[type="submit"]:hover {
 
 #cform button[name="elimina"]:hover {
     background-color: #d22; /* rosso più chiaro */
+}
+
+
+
+#cform button {
+    background-color: #310650; /* viola scuro */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+
+.button-comment{
+
+    background-color: #310650; /* viola scuro */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 40px;
+    margin-top: 50px;
+
 }

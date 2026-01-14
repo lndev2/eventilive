@@ -75,7 +75,7 @@ function display_event_posts(object $result)
 
 
     } else {
-        echo "Nessun commento ancora inserito";
+        echo '<p class="istruzioni">Nessun commento ancora inserito</p>';
     }
 
 
@@ -95,7 +95,7 @@ function display_inserisci_commento(object $conn, ?string $idEvento, ?string $us
             ?>
 
 
-            <button onclick="formCommento(<?php echo $idEvento ?>,true)">Modifica Commento</button>
+            <button class="button-comment" onclick="formCommento(<?php echo $idEvento ?>,true)">Modifica Commento</button>
             <div id="form-commento" class="form-commento">
             </div>
 
@@ -105,7 +105,7 @@ function display_inserisci_commento(object $conn, ?string $idEvento, ?string $us
             ?>
 
 
-            <button onclick="formCommento(<?php echo $idEvento ?>, false)">Inserisci Commento</button>
+            <button class="button-comment" onclick="formCommento(<?php echo $idEvento ?>, false)">Inserisci Commento</button>
             <div id="form-commento" class="form-commento">
             </div>
 
@@ -116,7 +116,7 @@ function display_inserisci_commento(object $conn, ?string $idEvento, ?string $us
 
     } else {
 
-        echo "Accedi per commentare!";
+        echo '<p class="istruzioni">Accedi per commentare!</p>';
     }
 
 
