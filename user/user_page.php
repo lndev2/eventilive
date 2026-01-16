@@ -50,13 +50,13 @@ require "user_view.php";
         <div id="inserisciEvento" class="tabcontent form-mod-style">
             
             <p>Inserisci Evento</p>
-            <form action="evento_contr.php" method="POST">
+            <form action="evento_contr.php" method="POST" enctype="multipart/form-data">
                 <fieldset>
 
-                    <label for="titolo">Titolo</label><br>
-                    <input type="text" name="titolo" required></input><br><br>
+                    <label for="titolo">Titolo</label>
+                    <input type="text" id="titolo" name="titolo" required></input><br><br>
 
-                    <label for="categoria">Categoria</label><br>
+                    <label for="categoria">Categoria</label>
                     <select name="categoria" required>
                         <option value="1">Concerti</option>
                         <option value="2">Teatro</option>
@@ -65,26 +65,26 @@ require "user_view.php";
                         <option value="5">Gastronomia</option>
                     </select><br><br>
 
-                    <label for="città">Città</label><br>
-                    <input type="text" name="città" required></input><br><br>
+                    <label for="città">Città</label>
+                    <input type="text" id="città" name="città" required></input><br><br>
 
-                    <label for="luogo">Luogo</label><br>
-                    <input type="text" name="luogo" required></input><br><br>
+                    <label for="luogo">Luogo</label>
+                    <input type="text" id="luogo" name="luogo" required></input><br><br>
 
-                    <label for="provincia">Provincia</label><br>
-                    <input type="text" name="provincia" required></input><br><br>
+                    <label for="provincia">Provincia</label>
+                    <input type="text" id="provincia" name="provincia" required></input><br><br>
 
                     <label for="data">Data</label>
-                    <input type="date" name="data"><br><br>
+                    <input type="date" id="data" name="data"><br><br>
 
-                    <label for="ora">Ora</label><br>
-                    <input type="time" name="ora" required></input><br><br>
+                    <label for="ora">Ora</label>
+                    <input type="time" id="ora" name="ora" required></input><br><br>
 
-                    <label for="descrizione">Descrizione</label><br>
-                    <textarea type="textarea" name="descrizione" rows="4" cols="50" required></textarea><br><br>
+                    <label for="descrizione">Descrizione</label>
+                    <textarea type="textarea" id="descrizione" name="descrizione" rows="4" cols="50" required></textarea><br><br>
 
                     <label for="immagine">Carica Immagine:</label>
-                    <input type="file" name="immagine"><br><br>
+                    <input type="file"  name="immagine" id="immagine"><br><br>
 
                     <button type="submit" name="inserisci" value="inserisciEvento">Invia</button>
 

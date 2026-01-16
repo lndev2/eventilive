@@ -30,6 +30,7 @@ function modEventoForm(idEvento,titolo,idCategoria,città,luogo,provincia,data,o
     form.className = "form-mod-style";
     form.action = "evento_contr.php";
     form.method = "POST";
+    form.enctype = "multipart/form-data";
 
     const fieldset = document.createElement("fieldset");
 

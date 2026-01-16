@@ -24,13 +24,13 @@ function get_user_events(mysqli $mysqli, string $id_utente): mixed
 
 
 
-function insert_event(object $conn, string $userId, string $titolo, string $categoria, string $città, string $luogo, string $provincia, string $data, string $ora, string $descrizione)
+function insert_event(object $conn, string $userId, string $titolo, string $categoria, string $città, string $luogo, string $provincia, string $data, string $ora, string $descrizione, string $immagine)
 {
 
-    $sql = "INSERT INTO eventi (id_utente, titolo, id_categoria, città, luogo, provincia, data_inizio, ora, descrizione) VALUES
-    (?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO eventi (id_utente, titolo, id_categoria, città, luogo, provincia, data_inizio, ora, descrizione, immagine) VALUES
+    (?,?,?,?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("isissssss", $userId, $titolo, $categoria, $città, $luogo, $provincia, $data, $ora, $descrizione);
+    $stmt->bind_param("isisssssss", $userId, $titolo, $categoria, $città, $luogo, $provincia, $data, $ora, $descrizione, $immagine);
     $stmt->execute();
 
 }
@@ -51,22 +51,25 @@ function del_event(object $conn, string $idEvento): void
 
 
 
-function mod_event(object $conn, string $idEvento, string $titolo, string $categoria, string $città, string $luogo, string $provincia, string $data, string $ora, string $descrizione): void
+function mod_event(object $conn, string $idEvento, string $titolo, string $categoria, string $città, string $luogo, string $provincia, string $data, string $ora, string $descrizione, string $immagine): void
 {
 
     $sql = "UPDATE eventi
-SET titolo = ?, id_categoria=?, città = ?, luogo = ?, provincia = ?, data_inizio = ?, ora = ?, descrizione = ?
+SET titolo = ?, id_categoria=?, città = ?, luogo = ?, provincia = ?, data_inizio = ?, ora = ?, descrizione = ?, immagine = ?
 WHERE id_evento = ?;";
+
+
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sissssssi", $titolo, $categoria, $città, $luogo, $provincia, $data, $ora, $descrizione, $idEvento);
+    $stmt->bind_param("sisssssssi", $titolo, $categoria, $città, $luogo, $provincia, $data, $ora, $descrizione, $immagine, $idEvento);
+
     $stmt->execute();
+
 
 }
 
 
 function subscribe(object $conn, string $idUtente, string $idCategoria)
 {
-
 
     $sql = "INSERT INTO iscrizioni (id_utente, id_categoria)
 VALUES (?, ?)
@@ -80,7 +83,6 @@ ON DUPLICATE KEY UPDATE id_utente = id_utente;";
 
 function unsubscribe(object $conn, string $idUtente, string $idCategoria)
 {
-
 
     $sql = "DELETE FROM iscrizioni WHERE id_utente = ? AND id_categoria =  ? ;";
     $stmt = $conn->prepare($sql);

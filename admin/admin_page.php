@@ -20,6 +20,7 @@ require '../partials/navbar.php';
 
 <body>
 
+<!-- TODO -->
 
 <?php renderNavbar(); ?>
 
