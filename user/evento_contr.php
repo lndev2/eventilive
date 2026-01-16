@@ -14,6 +14,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
     $ora = $_POST["ora"];
     $descrizione = $_POST["descrizione"];
 
+    if (!isset($_FILES['immagine'])) {
+        $file = $_FILES['immagine'];
+    }
+
+
+
 
     try {
 

@@ -29,6 +29,11 @@ class Database
     {
         return self::connect('user');
     }
+
+    public static function admin(): mysqli
+    {
+        return self::connect('admin');
+    }
 }
 
 
