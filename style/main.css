@@ -14,6 +14,8 @@
     font-family: Arial, sans-serif;
     color: #333;
     font-size: 0.95em;       /* leggermente più piccolo */
+    border: 1px solid #310650; /* bordo viola scuro */
+   border-radius: 8px 8px 8px 8px; /* arrotondato solo in basso */
 }
 
 /* Titolo del form */

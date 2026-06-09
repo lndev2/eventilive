@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
         require_once 'signup_model.php';
         //view
         require_once 'signup_contr_funzioni.php';
-        
+
         if (isset($_SESSION["user"])) {
 
             $user = $_SESSION['user'];
@@ -28,8 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
             $conn = Database::guest();
 
         }
-
-
 
 
 
