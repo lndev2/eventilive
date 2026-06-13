@@ -7,10 +7,12 @@
   background-size: cover; /* L'immagine copre tutta la div */
   background-repeat: no-repeat; /* Non ripetere l'immagine */
   background-position: center; /* Centra l'immagine */
+  
 }
 /* Stile generale per il box descrizione */
 .descrizione {
-    background-color: #fff; /* sfondo bianco */
+    background-color: #742d7a; /* sfondo bianco */
+    
     padding: 15px 20px;
     max-width: 500px;       /* dimensione simile ai form */ 
     border-radius: 8px;
@@ -28,8 +30,10 @@
 
 /* Titolo principale */
 .descrizione h2 {
-    font-size: 1.5em;
-    color: #310650;          /* viola scuro coerente */
+    font-size: 1.8em;
+    font-weight: bold;
+    
+    color: #310650; ;          /* viola scuro coerente */
     margin-bottom: 10px;
     text-align: center;
 }
@@ -38,7 +42,7 @@
 .descrizione p {
     font-size: 1em;
     margin: 5px 0;           /* margini più piccoli e uniformi */
-    color: #333;
+    color: #ffffff;
 }
 
 /* Eventuali paragrafi speciali */
@@ -74,31 +78,23 @@
 
 
 
-
-
-
-
-
-
-
-
-
 /* Stile generale per il contenitore commenti */
 .commenti {
     max-width: 600px;
     font-family: Arial, sans-serif;
     color: #333;
-    background-color: #fff;
+    background-color: #9b2de4;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     margin: 50px 0px 10px 100px;
+    border: 1px solid #4b146f;
 
 }
 
 /* Singolo commento */
 .commento {
-    border: 1px solid #4c4c5a; /* linea chiara tra commenti */
+    border: 3px solid #4b146f; /* linea chiara tra commenti */
     border-radius: 6px;
     padding: 10px 15px;
     margin-bottom: 15px;
@@ -143,6 +139,7 @@
     padding: 20px;
     max-width: 600px;
     margin: 40px;
+    border: 1px solid black;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;

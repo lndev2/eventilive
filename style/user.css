@@ -8,7 +8,7 @@
 .tab {
   overflow: hidden;
   border: 1px solid #310650; /* bordo viola scuro */
-  background-color: #f5f3f8; /* viola chiaro */
+  background-color: #9e5dff; /* viola chiaro */
   border-radius: 8px; /* arrotondato come il form */
 }
 
@@ -100,6 +100,12 @@ table td a {
   font-weight: bold;
 }
 
+table tr {
+
+  border: 2px solid blueviolet;
+
+}
+
 table td a:hover {
   color: #4b146f; /* viola più chiaro on hover */
   text-decoration: underline;
@@ -114,60 +120,3 @@ table td.center {
 
 
 
-/* Stile generale per il form categorie */
-.categories-form {
-    background-color: #fff; /* sfondo bianco */
-    padding: 15px;
-    max-width: 450px;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    color: #333;
-    font-size: 0.95em;
-}
-
-/* Label dei checkbox */
-.categories-form label {
-    display: inline-block;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    color: #310650; /* viola scuro */
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Checkbox styling leggero */
-.categories-form input[type="checkbox"] {
-    width: auto;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-/* Spaziatura tra checkbox */
-.categories-form input[type="checkbox"] + label {
-    margin-right: 15px;
-}
-
-/* Pulsante */
-.categories-form button[type="submit"] {
-    background-color: #310650; /* viola scuro */
-    color: #fff;
-    border: none;
-    padding: 10px 16px;
-    font-size: 0.95em;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
-
-.categories-form button[type="submit"]:hover {
-    background-color: #4b146f; /* viola più chiaro on hover */
-}
-
-/* Focus sugli input (checkbox non ha focus visibile standard, ma aggiungiamo effetto per accessibilità) */
-.categories-form input[type="checkbox"]:focus {
-    outline: 2px solid #4b146f;
-    outline-offset: 2px;
-}

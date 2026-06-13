@@ -36,7 +36,8 @@
 
 /* Label */
 .form-mod-style label {
-    display: block;
+    display: inline;
+    margin-bottom: 100px;
     font-weight: bold;
     margin-bottom: 4px;      /* leggermente più compatto */
     color: #310650;

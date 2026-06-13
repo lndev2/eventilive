@@ -20,15 +20,15 @@ require '../partials/navbar.php';
 <body>
     <?php renderNavbar($user); ?>
 
-    <div class="content">
+    <main class="content">
         <div>
             <?php display_event_desc($result) ?>
         </div>
 
-        <?php display_inserisci_commento($conn,  $idEvento,  $userId) ?> 
+        <?php display_inserisci_commento($conn, $idEvento, $userId) ?>
         <?php display_event_posts($post) ?>;
 
-    </div>
+    </main>
     <?php renderTrailer() ?>
 
     <script src="commento.js"></script>

@@ -21,7 +21,7 @@ body {
 
 .content {
   flex: 1; /* Questo permette alla sezione di contenuto di occupare lo spazio rimanente */
-  background-color: whitesmoke;
+  
 }
 
 .navbar a {

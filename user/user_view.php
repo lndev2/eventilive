@@ -54,7 +54,7 @@ function display_subs(array $subs)
 {
 
     ?>
-        <form class="categories-form" action="iscrizioni_contr.php" method="POST">
+        <form class="form-mod-style" action="iscrizioni_contr.php" method="POST">
 
 
             <input type="checkbox" id="c1" name="categorie[]" value="1" <?php echo is_subscribed($subs, 1) ?>>
