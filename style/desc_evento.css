@@ -1,13 +1,15 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 
 .img {
   background-size: cover; /* L'immagine copre tutta la div */
   background-repeat: no-repeat; /* Non ripetere l'immagine */
   background-position: center; /* Centra l'immagine */
-  
+  margin-top: 50px;
+  margin-left: 100px;
+
 }
 /* Stile generale per il box descrizione */
 .descrizione {

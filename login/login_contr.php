@@ -1,15 +1,13 @@
 <?php
-
+require_once "../config_session.inc.php";
 
 //se l'utente è arrivato alla pagina legittimamente eseguendo metodo POST tramite form
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && !isset($_SESSION["user"])) {
 
 
     $username = $_POST["username"];
     $pwd = $_POST["pwd"]; //password inserita
 
-    echo $username;
-    echo $pwd;
 
     try {
 
@@ -17,26 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once 'login_model.inc.php';
         require_once 'login_contr_funzioni.php';
 
+        $user = null;
+        $conn = Database::guest();
 
-        if (isset($_SESSION["user"])) {
-
-
-
-            $user = $_SESSION['user'];
-            $conn = Database::user();
-
-
-
-        } else {
-
-
-
-            $user = null;
-            $conn = Database::guest();
-
-
-
-        }
 
         //ERROR HANDLERS 
         // L'attributo required nelle tag HTML può essere rimosso lato frontend e bypassato
@@ -45,8 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (is_input_empty($username, $pwd)) {
             
             
-            
-
             $errors["empty_input"] = "Fill in all fields!";
 
             //echo "empty";
@@ -67,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
         
 
-        require_once "../config_session.inc.php";
+        
         
 
         if ($errors) {
@@ -102,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: ../home/index.php?login=success");
 
         //best practice
-        $pdo = null;
+        $conn = null;
         $statement = null;
         die();
 

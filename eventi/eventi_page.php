@@ -24,7 +24,7 @@ require "../partials/navbar.php"
 <body>
 
     <?php renderNavbar($user); ?>
-
+    
     <form class="filtra" action="eventi_contr.php" method="GET">
 
         <br>

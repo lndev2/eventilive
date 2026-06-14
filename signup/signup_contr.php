@@ -1,5 +1,6 @@
 <?php
 
+require_once "../config_session.inc.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
 
@@ -47,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
             $errors["email_used"] = "Email already registered!";
         }
 
-        require_once "../config_session.inc.php";
+        
 
         if ($errors) {
 
