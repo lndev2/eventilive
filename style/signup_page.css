@@ -20,12 +20,13 @@
     margin: 5% auto;
     max-width: 600px;
 
-    background: #fff; /* coerente con i form */
+
+    background-color: #7878BB;
     border: 2px solid #310650; /* viola scuro */
     border-radius: 12px;
 
     text-align: center;
-    color: #333;
+    color: #000000;
     font-family: Arial, sans-serif;
 
     box-shadow: 0 4px 10px rgba(49, 6, 80, 0.1);
@@ -37,6 +38,7 @@
     padding: 8px 10px;
     margin: 3px;
 
+    color: black;
     border: 1px solid #310650;
     border-radius: 6px;
     font-size: 14px;
@@ -46,6 +48,7 @@
 
 /* Focus input */
 .container input:focus {
+    
     outline: none;
     border-color: #4b146f;
     box-shadow: 0 0 5px rgba(49, 6, 80, 0.4);

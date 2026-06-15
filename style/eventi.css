@@ -16,6 +16,9 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-family: Arial, sans-serif;
   color: #333;
+
+
+  border: 1px solid black;
 }
 
 /* Hover card */
