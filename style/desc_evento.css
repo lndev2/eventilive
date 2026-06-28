@@ -85,7 +85,7 @@
     max-width: 600px;
     font-family: Arial, sans-serif;
     color: #333;
-    background-color: #7878BB;
+    background: linear-gradient(135deg, #310650, #c388ec);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -147,7 +147,8 @@
     font-family: Arial, sans-serif;
     color: #333;
     margin-left: 100px;
-    background-color: #7878BB;
+    background: linear-gradient(135deg, #310650, #c388ec);
+
 }
 
 /* Textarea per il commento */

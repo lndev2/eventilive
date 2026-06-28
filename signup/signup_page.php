@@ -8,9 +8,8 @@ require_once '../partials/navbar.php';
 
 
 if (isset($_SESSION["user"])) {
-
-    $user = $_SESSION['user'];
-    $conn = Database::user();
+    header("Location: ../home/index.php");
+    die();
 
 } else {
 
@@ -82,5 +81,4 @@ if (isset($_SESSION["user"])) {
 
     <?php renderTrailer() ?>
 </body>
-
 </html>

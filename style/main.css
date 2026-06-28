@@ -5,12 +5,18 @@
 
 /* Stile generale compatto per il form Modifica Evento */
 .form-mod-style {
-    background-color: #7878bb;  /* sfondo bianco */
+    /* background-color: #7878bb; */  /* sfondo bianco */
+
+    
+    background: linear-gradient(135deg, #310650, #c388ec);
+    
+
+
     padding: 15px;           /* ridotto da 20px */
     max-width: 450px;        /* più stretto */
     margin: 15px auto;       /* margini più piccoli */
     border-radius: 6px;      /* leggermente più piccolo */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
     font-family: Arial, sans-serif;
     color: #333;
     font-size: 0.95em;       /* leggermente più piccolo */
@@ -22,7 +28,7 @@
 .form-mod-style p {
     font-size: 1.3em;        /* più piccolo */
     font-weight: bold;
-    color: #310650;           /* viola scuro */
+    color: #ffffff;           /* viola scuro */
     text-align: center;
     margin-bottom: 15px;      /* ridotto */
 }
@@ -40,7 +46,7 @@
     margin-bottom: 100px;
     font-weight: bold;
     margin-bottom: 4px;      /* leggermente più compatto */
-    color: #310650;
+    color: #ffffff;
 }
 
 /* Input, select e textarea */

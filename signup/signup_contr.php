@@ -2,7 +2,7 @@
 
 require_once "../config_session.inc.php";
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && !isset($_SESSION["user"])) {
 
     $username = $_POST["username"];
     $nome = $_POST["nome"];
@@ -14,25 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
 
         require_once '../connessione.php';
         require_once 'signup_model.php';
-        //view
         require_once 'signup_contr_funzioni.php';
 
-        if (isset($_SESSION["user"])) {
-
-            $user = $_SESSION['user'];
-            $userId = $_SESSION['user']['id_utente'];
-            $conn = Database::user();
-
-        } else {
-
-            $user = null;
-            $conn = Database::guest();
-
-        }
-
-
-
-        //ERROR HANDLERS 
+        $conn = Database::guest();
         $errors = [];
 
         if (is_input_empty($username, $nome, $cognome, $pwd, $email)) {
@@ -44,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
         if (is_username_taken($conn, $username)) {
             $errors["username_taken"] = "Username already taken!";
         }
-        if (is_email_registered($conn, $username)) {
+        if (is_email_registered($conn, $email)) {
             $errors["email_used"] = "Email already registered!";
         }
 
@@ -61,24 +45,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
                 "email" => $email
             ];
 
-            $_SESSION["signup_data"] = $signupData; //$_SESSION["signup_data"] del signup != da $_SESSION['user'] del login
+            $_SESSION["signup_data"] = $signupData; 
 
             header("Location: signup_page.php");
             die();
         }
 
-        $_SESSION["errors_signup"] = null;
-        $_SESSION["signup_data"] = null;
+        unset($_SESSION["errors_signup"]);
+        unset($_SESSION["signup_data"]);
 
         create_user($conn, $username, $nome, $cognome, $email, $pwd);
-
-
-
         header("Location: ../home/index.php?signup=success");
 
 
-        $conn = null;
-        $stmt = null;
+        $conn->close();
         die();
 
     } catch (Exception $e) {
@@ -86,11 +66,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !$_SESSION["user"]) {
     }
 
 
-} else { //se il request method non è POST l'utente non è arrivato alla pagina correttamente ...
-
-
+} else { 
 
 
     header("Location: signup_page.php?");
-    die(); // interruzione script ...
+    die(); 
 }

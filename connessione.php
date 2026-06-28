@@ -12,6 +12,8 @@ class Database
 
         if (mysqli_connect_errno()) {
 
+            die();
+
             //echo "Connessione fallita: ". $profile . $conn->connect_error;
         } else {
             //echo "connessione riuscita: " . $profile;

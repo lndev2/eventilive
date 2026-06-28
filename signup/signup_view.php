@@ -4,33 +4,34 @@
 
 declare(strict_types=1);
 
-//ricarica input precedentemente inseriti se al login ne mancano alcuni
 function signup_inputs(){
 
-
-
-    //se il nome è stato precedentemente inserito e 
-    //se il nome non è stato preso
+     // Username: ripristinato se presente in sessione e se non c'è errore "username_taken"
     if(isset($_SESSION["signup_data"]["username"]) && !isset($_SESSION["error_signup"]["username_taken"])){
         echo '<input type="text" name="username" placeholder="Username" value="'.$_SESSION["signup_data"]["username"] .'"><br>';
     }else{
         echo '<input type="text" name="username" placeholder="Username"><br>';
     }   
 
+    // Nome: ripristina valore precedente se presente in sessione
     if(isset($_SESSION["signup_data"]["nome"])){
         echo '<input type="text" name="nome" placeholder="Nome" value="' . $_SESSION["signup_data"]["nome"].'"><br>';
     }else{
         echo '<input type="text" name="nome" placeholder="Nome"><br>';
     }
 
+     // Cognome: ripristina valore precedente se presente in sessione
     if(isset($_SESSION["signup_data"]["cognome"])){
         echo '<input type="text" name="cognome" placeholder="Cognome" value="' . $_SESSION["signup_data"]["cognome"].'"><br>';
     }else{
         echo '<input type="text" name="cognome" placeholder="Cognome"><br>';
     }
 
+    // Password: non viene mai ripristinata
     echo '<input type="password" name="pwd" placeholder="Password"><br>';
 
+
+    // Email: ripristina valore solo se non ci sono errori specifici (email usata o non valida)
     if(isset($_SESSION["signup_data"]["email"]) && !isset($_SESSION["error_signup"]["email_used"]) && !isset($_SESSION["error_signup"]["invalid_email"])){
         echo '<input type="text" name="email" placeholder="E-Mail" value="'. $_SESSION["signup_data"]["email"].'">';
     }else{
