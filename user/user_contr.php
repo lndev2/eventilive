@@ -8,7 +8,7 @@ if (isset($_SESSION['user'])) {
 
     $user = $_SESSION['user'] ?? null;
     $id_utente = $_SESSION['user']["id_utente"];
-    $conn = Database::user();
+
 
     $result = get_user_events($conn, $id_utente);
     $subs = retrives_subs($conn,$id_utente );

@@ -30,6 +30,8 @@
     
 }
 
+
+
 /* Titolo principale */
 .descrizione h2 {
     font-size: 1.8em;
@@ -78,6 +80,13 @@
 
 }
 
+.errore {
+    font-size: 1.1vw;
+    margin-left: 40px;
+    color: #4b146f;
+    margin-left: 100px;
+
+}
 
 
 /* Stile generale per il contenitore commenti */

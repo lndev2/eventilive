@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !isset($_SESSION["user"])) {
         require_once 'signup_model.php';
         require_once 'signup_contr_funzioni.php';
 
-        $conn = Database::guest();
         $errors = [];
 
         if (is_input_empty($username, $nome, $cognome, $pwd, $email)) {

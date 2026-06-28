@@ -7,16 +7,11 @@ require_once '../config_session.inc.php';
 
 
 
-if (isset($_SESSION["user"])) {
 
-    $user = $_SESSION['user'];
-    $conn = Database::user();
 
-} else {
+$user = $_SESSION['user'] ?? null;
 
-    $user = null;
-    $conn = Database::guest();
-}
+
 
 
 if (isset($_GET["categoria"])) {

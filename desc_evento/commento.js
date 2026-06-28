@@ -1,4 +1,6 @@
 // modifica booleano
+
+
 function formCommento(idEvento, modifica) {
   const parent = document.getElementById("form-commento");
 
@@ -36,9 +38,11 @@ function formCommento(idEvento, modifica) {
     let button = document.createElement("button");
     button.type = "submit";
 
+    //Se il commento non è stato inserito
     if (!modifica) {
       button.name = "invia";
       button.textContent = "Invia";
+    //Se il commento è stato inserito
     } else {
       button.name = "modifica";
       button.textContent = "Modifica";
@@ -47,6 +51,7 @@ function formCommento(idEvento, modifica) {
     button.value = "inviaCommento";
     form.appendChild(button);
 
+    //Se il commento è stato inserito
     if (modifica) {
       let buttonElimina = document.createElement("button");
       buttonElimina.type = "submit";

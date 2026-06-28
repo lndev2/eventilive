@@ -16,8 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !isset($_SESSION["user"])) {
         require_once 'login_contr_funzioni.php';
 
         $user = null;
-        $conn = Database::guest();
-
 
         //ERROR HANDLERS 
         // L'attributo required nelle tag HTML può essere rimosso lato frontend e bypassato

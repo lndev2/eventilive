@@ -72,8 +72,6 @@ function display_event_posts(object $result)
 
         echo '</div>';
 
-
-
     } else {
         echo '<p class="istruzioni">Nessun commento ancora inserito</p>';
     }
@@ -83,8 +81,7 @@ function display_event_posts(object $result)
 
 
 
-function display_inserisci_commento(object $conn, ?string $idEvento, ?string $userId)
-{
+function display_inserisci_commento(object $conn, ?string $idEvento, ?string $userId){
 
 
 
@@ -110,9 +107,16 @@ function display_inserisci_commento(object $conn, ?string $idEvento, ?string $us
             </div>
 
 
-            <?php
+            <?php 
 
         }
+
+        if(isset($_SESSION["errore_post"])){
+
+            echo '<p class="descrizione" > ' . $_SESSION["errore_post"] . '</p>';
+            unset($_SESSION["errore_post"]);
+        }    
+
 
     } else {
 
@@ -120,5 +124,6 @@ function display_inserisci_commento(object $conn, ?string $idEvento, ?string $us
     }
 
 
-}
 
+
+}

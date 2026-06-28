@@ -13,9 +13,7 @@ if (isset($_SESSION["user"])) {
 
 } else {
 
-
     $user = null;
-    $conn = Database::guest();
 
 }
 

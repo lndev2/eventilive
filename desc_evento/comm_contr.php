@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
 
         $userId = $_SESSION["user"]["id_utente"];
-        $conn = Database::user();
+
 
         if (isset($_POST["elimina"])) {
 
@@ -31,15 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
             if (empty($commento)) {
 
-                $errors["commento_vuoto"] = "Inserisci un commento!";
-            }
+                $_SESSION["errore_post"] = "Inserisci un commento!";
 
 
-            if ($errors) {
-
-                $_SESSION["errori_post"] = $errors;
-
-                //completare display
                 header("Location: " . $_SERVER['HTTP_REFERER']);
                 exit();
             }
@@ -54,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
                 mod_comment($conn, $userId, $idEvento, $commento, $voto);
 
             }
-
         }
 
 
@@ -63,17 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
         $stmt = null;
         die();
 
-
-
-
     } catch (Exception $e) {
-        die("Query failed: " . $e->getMessage());
+        die("errore: " . $e->getMessage());
     }
 
 
 
 } else {
-    
+
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 }

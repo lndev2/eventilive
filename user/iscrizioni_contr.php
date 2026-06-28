@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION["user"])) {
 
         require_once '../connessione.php';
         require_once "user_model.php";
-        $conn = Database::user();
+
 
         $userId = $_SESSION["user"]["id_utente"];
 
