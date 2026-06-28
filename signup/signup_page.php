@@ -42,7 +42,7 @@ if (isset($_SESSION["user"])) {
         <div class="container">
 
             <h3>login</h3><br>
-            <form class="form-mod-style" action="../login/login_contr.php" method="post">
+            <form class="cform" action="../login/login_contr.php" method="post">
 
                 <fieldset>
 
@@ -60,7 +60,7 @@ if (isset($_SESSION["user"])) {
         <div class="container">
 
             <h3>Signup</h3><br>
-            <form class="form-mod-style" action="signup_contr.php" method="POST">
+            <form class="cform" action="signup_contr.php" method="POST">
 
 
                 <fieldset>

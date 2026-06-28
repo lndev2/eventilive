@@ -9,13 +9,13 @@ body {
   
   
 }
-.navbar {
+.navbar1 {
   min-block-size: 30px;
   background-color: #333;
   overflow: hidden;
 }
 
-.navbar.trailer {
+.navbar1.trailer {
   background-color: #310650;
 }
 
@@ -24,7 +24,7 @@ body {
   
 }
 
-.navbar a {
+.navbar1 a {
   float: left;
   display: block;
   color: white;
@@ -33,7 +33,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
 }
-.navbar a:hover {
+.navbar1 a:hover {
   background-color: rgba(162, 0, 255, 0.548);
   color:white;
 }

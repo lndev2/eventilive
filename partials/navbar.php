@@ -3,7 +3,7 @@ function renderNavbar($user = null)
 {
   ?>
 
-  <div class="navbar">
+  <div class="navbar1">
 
     <!-- navigazione indietro -->
     <?php
@@ -49,7 +49,7 @@ function renderTrailer()
 {
   ?>
 
-  <div class="navbar trailer">
+  <div class="navbar1 trailer">
 
     <p class="trailer" href="../home/index.php">EventiLive.com</p>
 

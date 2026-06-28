@@ -5,22 +5,19 @@
 
 /* Stile generale compatto per il form Modifica Evento */
 .form-mod-style {
-    /* background-color: #7878bb; */  /* sfondo bianco */
-
+   
+    background-color: #a8c3d8; 
     
-    background: linear-gradient(135deg, #310650, #c388ec);
-    
-
-
+    background: linear-gradient(135deg, #a8c3d8 40% , #d2d9dd 90%);
     padding: 15px;           /* ridotto da 20px */
     max-width: 450px;        /* più stretto */
     margin: 15px auto;       /* margini più piccoli */
     border-radius: 6px;      /* leggermente più piccolo */
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
     font-family: Arial, sans-serif;
-    color: #333;
+    color: #000000;
     font-size: 0.95em;       /* leggermente più piccolo */
-    border: 1px solid #310650; /* bordo viola scuro */
+    
    border-radius: 8px 8px 8px 8px; /* arrotondato solo in basso */
 }
 
@@ -28,7 +25,7 @@
 .form-mod-style p {
     font-size: 1.3em;        /* più piccolo */
     font-weight: bold;
-    color: #ffffff;           /* viola scuro */
+    color: #000000;           /* viola scuro */
     text-align: center;
     margin-bottom: 15px;      /* ridotto */
 }
@@ -46,7 +43,7 @@
     margin-bottom: 100px;
     font-weight: bold;
     margin-bottom: 4px;      /* leggermente più compatto */
-    color: #ffffff;
+    color: #000000;
 }
 
 /* Input, select e textarea */
@@ -59,7 +56,6 @@
     width: 100%;
     padding: 6px 8px;        /* meno padding */
     margin-bottom: 10px;     /* meno spazio tra campi */
-    border: 1px solid #310650;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 0.95em;       /* leggermente più piccolo */
@@ -98,7 +94,6 @@
 .form-mod-style select:focus,
 .form-mod-style textarea:focus {
     outline: none;
-    border-color: #4b146f;
     box-shadow: 0 0 4px rgba(49, 6, 80, 0.4);
 }
 
@@ -109,7 +104,6 @@
 
     padding: 6px 8px;        /* meno padding */
     margin-left: 15px;     /* meno spazio tra campi */
-    border: 1px solid #310650;
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 0.95em;       /* leggermente più piccolo */

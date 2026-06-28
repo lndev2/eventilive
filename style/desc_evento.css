@@ -138,10 +138,10 @@
     font-weight: bold;
 }
 
-
-
-
-
+.custom-sky {
+  /* background: #eaf6ff; */ /* celeste molto chiaro moderno */
+  background: linear-gradient(135deg, #a8c3d8 40% , #d2d9dd 90%);
+}
 
 
 /* Stile generale per il form commenti */
@@ -149,14 +149,13 @@
     
     padding: 20px;
     max-width: 600px;
-    margin: 40px;
-    border: 1px solid black;
+    
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
     color: #333;
-    margin-left: 100px;
-    background: linear-gradient(135deg, #310650, #c388ec);
+    
+    background: whitesmoke
 
 }
 
@@ -247,7 +246,9 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-left: 100px;
+    margin-left: 0px;
     margin-top: 50px;;
+    width: 15em;
+    
     
 }

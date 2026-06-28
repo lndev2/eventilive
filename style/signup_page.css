@@ -21,13 +21,12 @@
     max-width: 600px;
 
 
-    background: linear-gradient(135deg, #310650, #c388ec);
 
     border: 2px solid #310650; /* viola scuro */
     border-radius: 12px;
 
     text-align: center;
-    color: #ffffff;
+    color: #310650;
     font-family: Arial, sans-serif;
 
     box-shadow: 0 4px 10px rgba(49, 6, 80, 0.1);

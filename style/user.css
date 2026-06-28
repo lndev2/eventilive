@@ -1,6 +1,8 @@
 .titolo {
-  text-align: center;
-
+  text-align: left;
+  color:#ffffff;
+  font-size: 1.5vw;
+  margin-bottom: 0;
 }
 
 
@@ -8,8 +10,9 @@
 .tab {
   overflow: hidden;
   border: 1px solid #310650; /* bordo viola scuro */
-  background-color: #9e5dff; /* viola chiaro */
+  background-color: #ffffff; /* viola chiaro */
   border-radius: 8px; /* arrotondato come il form */
+  color:#310650
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -28,7 +31,7 @@
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #4b146f; /* viola più chiaro */
+  background-color: #462c57; /* viola più chiaro */
   color: #fff; /* testo bianco */
 }
 
@@ -42,9 +45,9 @@
 .tabcontent {
   display: none;
   padding: 12px;
-  border: 1px solid #310650; /* bordo viola scuro */
   
-  background-color: #fff; /* sfondo bianco */
+  
+  background-color: #eaf6ff; /* sfondo bianco */
   border-radius: 0 0 8px 8px; /* arrotondato solo in basso */
 }
 
@@ -59,7 +62,7 @@
 }
 
 .evento-selezionato {
-  background-color: rgba(162, 0, 255, 0.548);
+  background-color: #bde2ff;
 }
 
 
@@ -102,12 +105,12 @@ table td a {
 
 table tr {
 
-  border: 2px solid blueviolet;
+  border: 2px solid rgb(0, 0, 0);
 
 }
 
 table td a:hover {
-  color: #4b146f; /* viola più chiaro on hover */
+  color: #663785; /* viola più chiaro on hover */
   text-decoration: underline;
 }
 
